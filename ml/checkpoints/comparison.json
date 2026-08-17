@@ -1,0 +1,92 @@
+[
+  {
+    "name": "fingertipimu_only_flexible",
+    "modality": "imu",
+    "audio_source": "surface",
+    "imu_source": "fingertip",
+    "test_acc": 0.9517241379310345,
+    "test_loss": 0.14382600491066866,
+    "val_acc_best": 0.9793103448275862,
+    "n_test": 145,
+    "classes": [
+      "digits_0",
+      "digits_1",
+      "digits_2"
+    ]
+  },
+  {
+    "name": "surfacemic+fingertipimu_felxible",
+    "modality": "fusion",
+    "audio_source": "surface",
+    "imu_source": "fingertip",
+    "test_acc": 0.9448275862068966,
+    "test_loss": 0.16168157401141423,
+    "val_acc_best": 0.9655172413793104,
+    "n_test": 145,
+    "classes": [
+      "digits_0",
+      "digits_1",
+      "digits_2"
+    ]
+  },
+  {
+    "name": "surfacemic_only_flexible",
+    "modality": "audio",
+    "audio_source": "surface",
+    "imu_source": "fingertip",
+    "test_acc": 0.8620689655172413,
+    "test_loss": 0.44721841720928407,
+    "val_acc_best": 0.8482758620689655,
+    "n_test": 145,
+    "classes": [
+      "digits_0",
+      "digits_1",
+      "digits_2"
+    ]
+  },
+  {
+    "name": "watchimu_only_flexible",
+    "modality": "imu",
+    "audio_source": "surface",
+    "imu_source": "watch",
+    "test_acc": 0.9583333333333334,
+    "test_loss": 0.09085885071868284,
+    "val_acc_best": 0.9930555555555556,
+    "n_test": 144,
+    "classes": [
+      "digits_0",
+      "digits_1",
+      "digits_2"
+    ]
+  },
+  {
+    "name": "watchmic+watchimu_felxible",
+    "modality": "fusion",
+    "audio_source": "watch",
+    "imu_source": "watch",
+    "test_acc": 0.9652777777777778,
+    "test_loss": 0.1401122502154774,
+    "val_acc_best": 0.9930555555555556,
+    "n_test": 144,
+    "classes": [
+      "digits_0",
+      "digits_1",
+      "digits_2"
+    ]
+  },
+  {
+    "name": "watchmic_only_flexible",
+    "modality": "audio",
+    "audio_source": "watch",
+    "imu_source": "fingertip",
+    "test_acc": 0.6736111111111112,
+    "test_loss": 0.7290097938643562,
+    "val_acc_best": 0.6666666666666666,
+    "n_test": 144,
+    "classes": [
+      "digits_0",
+      "digits_1",
+      "digits_2"
+    ]
+  }
+]
