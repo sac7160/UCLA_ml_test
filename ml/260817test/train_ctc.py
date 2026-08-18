@@ -44,6 +44,12 @@ import matplotlib
 matplotlib.use('Agg')   # this runs in a terminal, not a notebook — never try to pop up a GUI window,
                           # just render straight to a file (see plot_history() below)
 import matplotlib.pyplot as plt
+try:
+    from torch.utils.tensorboard import SummaryWriter
+    HAS_TENSORBOARD = True
+except ImportError:
+    HAS_TENSORBOARD = False   # --tensorboard just prints a warning and continues without it —
+                               # see main()'s handling of this flag
 
 import config
 import config_ctc
@@ -340,6 +346,16 @@ def main():
                              'this entirely. Every epoch would be wasteful; this plus one final write after '
                              'training finishes is enough to check progress by just opening the image, no '
                              'need to wait for the run to finish or parse the console log by hand.')
+    parser.add_argument('--tensorboard', action='store_true',
+                         help='also log every epoch\'s metrics to TensorBoard (train/val loss, val letter '
+                              'accuracy, word-level metrics when computed, plus the fusion gate\'s mean value '
+                              'as a rough "audio vs IMU trust" indicator) — unlike training_curves.png (a '
+                              'static image, refreshed periodically), TensorBoard updates live in a browser '
+                              'while training is still running, and lets you compare multiple runs side by '
+                              'side. Logs to --out-dir/tensorboard; view with: '
+                              'tensorboard --logdir <out-dir>/tensorboard. Requires the tensorboard package '
+                              '(pip install tensorboard) — if it\'s not installed, this prints a warning and '
+                              'training continues normally without it, same as any other optional extra here.')
     args = parser.parse_args()
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -503,6 +519,18 @@ def main():
     history = []
     curriculum_transitions = []   # [(epoch, label), ...] — drawn as vertical lines in plot_history()
     global_step = 0   # cumulative batches trained on so far — see --curriculum-stage1-steps
+
+    tb_writer = None
+    if args.tensorboard:
+        if HAS_TENSORBOARD:
+            tb_dir = args.out_dir / 'tensorboard'
+            tb_dir.mkdir(parents=True, exist_ok=True)
+            tb_writer = SummaryWriter(log_dir=str(tb_dir))
+            print(f'[SETUP] TensorBoard logging to {tb_dir} — view with: tensorboard --logdir {tb_dir}')
+        else:
+            print('[SETUP] --tensorboard was given but the tensorboard package isn\'t installed '
+                  '(pip install tensorboard) — continuing without it.')
+
     train_loader, active_concat, active_text = _build_train_loader(1, global_step)
     if args.curriculum:
         boundary_desc = (f'{args.curriculum_stage1_steps} steps' if args.curriculum_stage1_steps is not None
@@ -560,6 +588,20 @@ def main():
         history.append({'epoch': epoch, 'train_loss': train_loss, 'val_loss': val_loss, 'val_acc': val_acc,
                          'word_normalized_edit_distance': None, 'word_exact_accuracy': None})
 
+        if tb_writer is not None:
+            tb_writer.add_scalar('loss/train', train_loss, epoch)
+            tb_writer.add_scalar('loss/val_letters', val_loss, epoch)
+            tb_writer.add_scalar('accuracy/val_letters', val_acc, epoch)
+            tb_writer.add_scalar('diagnostics/blank_only_pct', blank_pct, epoch)
+            if args.modality == 'fusion' and model.last_gate is not None:
+                # Mean gate value across the whole batch/timesteps/channels
+                # — a rough, single-number summary of "how much this
+                # epoch's model leaned on audio vs IMU overall" (1.0 =
+                # fully audio, 0.0 = fully IMU); see model_ctc.py's gate
+                # for the actual per-timestep, per-channel detail this
+                # collapses down from.
+                tb_writer.add_scalar('diagnostics/mean_fusion_gate', model.last_gate.mean().item(), epoch)
+
         # Whenever real word/sentence val data exists, IT decides which
         # checkpoint is "best" — not letter val_loss alone. See
         # evaluate_word_level()'s docstring for why: letter val_loss can't
@@ -581,6 +623,9 @@ def main():
                   + ', '.join(f'"{t}"->"{d or "(blank)"}"' for t, d in word_examples))
             history[-1]['word_normalized_edit_distance'] = norm_ed
             history[-1]['word_exact_accuracy'] = word_acc
+            if tb_writer is not None:
+                tb_writer.add_scalar('diagnostics/word_normalized_edit_distance', norm_ed, epoch)
+                tb_writer.add_scalar('accuracy/word_exact', word_acc, epoch)
             if norm_ed <= best_word_edit_distance:
                 best_word_edit_distance = norm_ed
                 args.out_dir.mkdir(parents=True, exist_ok=True)
@@ -626,6 +671,8 @@ def main():
         print(f'[PLOT] training curves saved to {args.out_dir / "training_curves.png"}')
     with open(args.out_dir / 'history.json', 'w') as f:
         json.dump({'history': history, 'curriculum_transitions': curriculum_transitions}, f, indent=2)
+    if tb_writer is not None:
+        tb_writer.close()
 
     if text_splits is not None and text_splits['val']:
         print(f'[DONE] best word-level normalized edit distance={best_word_edit_distance:.4f} — '
