@@ -197,15 +197,26 @@ class ConcatLetterDatasetCTC(Dataset):
 
         gap_samples = int(GAP_SEC * config_ctc.AUDIO_TARGET_SR)
         wave_pieces = []
+        surface_wave_pieces = []   # same picks, same gap pattern, but always the 'surface' source —
+                                     # the Mic decoder's reconstruction target, mirroring how traj_segs
+                                     # above is always fingertip regardless of self.imu_source
         for trial_dir, _ in picks:
             wave_pieces.append(_load_raw_waveform(trial_dir, self.audio_source))
             wave_pieces.append(torch.zeros(1, gap_samples))
+            surface_wave_pieces.append(_load_raw_waveform(trial_dir, 'surface'))
+            surface_wave_pieces.append(torch.zeros(1, gap_samples))
         full_wave = torch.cat(wave_pieces[:-1], dim=1)      # drop the trailing gap
         max_len = int(config_ctc.AUDIO_MAX_SEC_CAP * config_ctc.AUDIO_TARGET_SR)
         if full_wave.shape[1] > max_len:
             full_wave = full_wave[:, :max_len]
         mel = _DB(_MEL(full_wave))
         mel = (mel - mel.mean()) / (mel.std() + 1e-6)
+
+        full_surface_wave = torch.cat(surface_wave_pieces[:-1], dim=1)
+        if full_surface_wave.shape[1] > max_len:
+            full_surface_wave = full_surface_wave[:, :max_len]
+        surface_mel = _DB(_MEL(full_surface_wave))
+        surface_mel = (surface_mel - surface_mel.mean()) / (surface_mel.std() + 1e-6)
 
         gap_steps = max(1, int(GAP_SEC * config_ctc.IMU_RESAMPLE_HZ))
         imu_pieces = []
@@ -238,4 +249,4 @@ class ConcatLetterDatasetCTC(Dataset):
             full_traj = None
 
         target = torch.tensor([label + 1 for _, label in picks], dtype=torch.long)
-        return mel, full_imu, target, full_traj
+        return mel, full_imu, target, full_traj, surface_mel

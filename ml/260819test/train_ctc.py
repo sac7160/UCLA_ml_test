@@ -102,21 +102,34 @@ def compute_motion_loss(traj_pred: torch.Tensor, traj_padded: torch.Tensor, traj
     return torch.stack(losses).mean()
 
 
-def compute_spec_loss(spec_recon: torch.Tensor, audio_input: torch.Tensor, audio_lengths: torch.Tensor):
-    """MSE between the Mic decoder's (U-Net's) reconstruction of the
-    input spectrogram and the ACTUAL input spectrogram it was given —
-    a plain self-supervised reconstruction/autoencoding loss, no ground-
-    truth loading needed (the model's own audio INPUT tensor is the
-    target). Averaged per-sample over only each sample's real, unpadded
-    time extent (audio_lengths) — the padded region beyond a shorter
-    trial's real length is never trustworthy signal for anything,
-    reconstruction included."""
+def compute_spec_loss(spec_recon: torch.Tensor, surface_target: torch.Tensor, surface_lengths: torch.Tensor,
+                       audio_lengths: torch.Tensor):
+    """MSE between the Mic decoder's (U-Net's) reconstruction and the
+    real SURFACE MIC spectrogram — the reconstruction target is always
+    the surface mic recording, regardless of what audio_source the
+    model's actual INPUT uses (see dataset_ctc.LetterDatasetCTC's
+    surface_audio, loaded independently of the run's own --audio-source)
+    — mirroring exactly how the IMU decoder's target is always
+    fingertip_imu.csv regardless of --imu-source (see
+    compute_motion_loss). When --audio-source is already 'surface' this
+    degenerates to plain self-reconstruction (input and target are the
+    same recording) — a harmless, expected special case, not a bug.
+
+    spec_recon lives at the INPUT audio's own time resolution
+    (audio_lengths); surface_target lives at the surface mic's own
+    (usually close but not always identical) time resolution
+    (surface_lengths) — interpolated per-sample to reconcile, same idea
+    as compute_motion_loss's trajectory resizing."""
     losses = []
     for i in range(spec_recon.shape[0]):
-        t_len = int(audio_lengths[i])
-        if t_len < 1:
+        recon_len = int(audio_lengths[i])
+        target_len = int(surface_lengths[i])
+        if recon_len < 1 or target_len < 1:
             continue
-        losses.append(F.mse_loss(spec_recon[i, :, :, :t_len], audio_input[i, :, :, :t_len]))
+        recon_i = spec_recon[i:i + 1, :, :, :recon_len]              # (1, 1, N_MELS, recon_len)
+        target_i = surface_target[i:i + 1, :, :, :target_len]          # (1, 1, N_MELS, target_len)
+        target_resized = F.interpolate(target_i, size=recon_i.shape[2:], mode='bilinear', align_corners=False)
+        losses.append(F.mse_loss(recon_i, target_resized))
     if not losses:
         return None
     return torch.stack(losses).mean()
@@ -132,7 +145,8 @@ def evaluate(model, loader, classes, device, n_samples_to_show: int = 8):
     examples = []
     loss_fn = torch.nn.CTCLoss(blank=config_ctc.BLANK_IDX, zero_infinity=True)
     with torch.no_grad():
-        for audio, audio_len, imu, imu_len, targets, target_len, _traj, _traj_len, _has_traj in loader:
+        for (audio, audio_len, imu, imu_len, targets, target_len, _traj, _traj_len, _has_traj,
+             _surface, _surface_len) in loader:
             audio, imu = audio.to(device), imu.to(device)
             audio_len, imu_len = audio_len.to(device), imu_len.to(device)
             targets, target_len = targets.to(device), target_len.to(device)
@@ -337,12 +351,16 @@ def main():
                               'Try 0.1-0.5 as a starting point if enabling it.')
     parser.add_argument('--spec-loss-weight', type=float, default=0.0,
                          help='weight for the Mic (U-Net) encoder\'s auxiliary spectrogram-reconstruction '
-                              'loss — the same self-supervised idea as --motion-loss-weight, but for audio: '
-                              'the U-Net\'s decoder path reconstructs the model\'s own input spectrogram from '
-                              'z_mic, and is scored by plain MSE against that same input (no separate ground '
-                              'truth to load — the reconstruction TARGET is just the model\'s own input). '
-                              '0.0 (default) disables this loss term entirely. Try 0.1-0.5 as a starting '
-                              'point if enabling it.')
+                              'loss — the same idea as --motion-loss-weight, but for audio: the U-Net\'s '
+                              'decoder path reconstructs the SURFACE MIC spectrogram, ALWAYS from the '
+                              '\'surface\' source regardless of what --audio-source the model\'s actual input '
+                              'uses (mirroring how the IMU decoder always targets fingertip_imu.csv '
+                              'regardless of --imu-source) — so with --audio-source watch, this pushes '
+                              'z_mic toward "what would the cleaner surface mic have sounded like", not '
+                              'mere self-reconstruction. When --audio-source is already \'surface\' this '
+                              'degenerates to plain self-reconstruction (input and target are the same '
+                              'recording) — a harmless, expected special case. 0.0 (default) disables this '
+                              'loss term entirely. Try 0.1-0.5 as a starting point if enabling it.')
     parser.add_argument('--weight-decay', type=float, default=1e-4,
                          help='L2 penalty on the optimizer — another overfitting-vs-underfitting knob, '
                               'independent of --dropout')
@@ -656,11 +674,13 @@ def main():
         running_loss, running_motion_loss, running_spec_loss = 0.0, 0.0, 0.0
         n_batches, n_motion_batches, n_spec_batches = 0, 0, 0
         pbar = tqdm(train_loader, desc=f'epoch {epoch}/{args.epochs}', leave=False)
-        for audio, audio_len, imu, imu_len, targets, target_len, traj, traj_len, has_traj in pbar:
+        for (audio, audio_len, imu, imu_len, targets, target_len, traj, traj_len, has_traj,
+             surface, surface_len) in pbar:
             audio, imu = audio.to(device), imu.to(device)
             audio_len, imu_len = audio_len.to(device), imu_len.to(device)
             targets, target_len = targets.to(device), target_len.to(device)
             traj, traj_len, has_traj = traj.to(device), traj_len.to(device), has_traj.to(device)
+            surface, surface_len = surface.to(device), surface_len.to(device)
 
             optimizer.zero_grad()
             log_probs, out_len, traj_pred, spec_recon = model(audio, audio_len, imu, imu_len)
@@ -672,7 +692,7 @@ def main():
                     running_motion_loss += motion_loss.item()
                     n_motion_batches += 1
             if args.spec_loss_weight > 0 and spec_recon is not None:
-                spec_loss = compute_spec_loss(spec_recon, audio, audio_len)
+                spec_loss = compute_spec_loss(spec_recon, surface, surface_len, audio_len)
                 if spec_loss is not None:
                     loss = loss + args.spec_loss_weight * spec_loss
                     running_spec_loss += spec_loss.item()

@@ -208,6 +208,8 @@ class RealTextDatasetCTC(Dataset):
         audio = load_audio_variable(trial_dir, self.audio_source, t_start, t_end)
         imu = load_imu_variable(trial_dir, self.imu_source, self.finger, t_start, t_end)
         traj = load_trajectory_variable(trial_dir, self.finger, t_start, t_end)   # None if unavailable
+        surface_audio = load_audio_variable(trial_dir, 'surface', t_start, t_end)   # Mic decoder target,
+                                                                                       # always 'surface'
         target_indices = []
         for c in text:
             if c == ' ':
@@ -224,4 +226,4 @@ class RealTextDatasetCTC(Dataset):
             # dummy target rather than returning a length-0 target, which
             # nn.CTCLoss cannot score
             target = torch.tensor([1], dtype=torch.long)
-        return audio, imu, target, traj
+        return audio, imu, target, traj, surface_audio

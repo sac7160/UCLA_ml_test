@@ -283,8 +283,17 @@ class LetterDatasetCTC(Dataset):
         audio = load_audio_variable(trial_dir, self.audio_source)
         imu = load_imu_variable(trial_dir, self.imu_source, self.finger)
         traj = load_trajectory_variable(trial_dir, self.finger)   # None if unavailable — see its docstring
+        # Surface mic spectrogram, ALWAYS from the 'surface' source regardless
+        # of what self.audio_source actually is — the Mic decoder's
+        # reconstruction target, mirroring exactly how the IMU decoder's
+        # target is always fingertip_imu.csv regardless of self.imu_source
+        # (see load_trajectory_variable). When self.audio_source is already
+        # 'surface' this is trivially the same tensor as `audio` above (a
+        # harmless, expected degenerate case — see train_ctc.py's
+        # --spec-loss-weight docs).
+        surface_audio = load_audio_variable(trial_dir, 'surface')
         target = torch.tensor([label + 1], dtype=torch.long)   # +1: skip past BLANK_IDX=0
-        return audio, imu, target, traj
+        return audio, imu, target, traj, surface_audio
 
 
 def collate_fn_ctc(batch):
@@ -304,8 +313,16 @@ def collate_fn_ctc(batch):
     (poor fingertip tracking on that trial) rather than a fabricated one.
     Callers computing the auxiliary motion loss (see train_ctc.py) must
     mask by has_traj/traj_lengths, never assume every sample in a batch
-    has a real trajectory target."""
-    audios, imus, targets, trajs = zip(*batch)
+    has a real trajectory target.
+
+    surface_audio: list of (1, N_MELS, T_i) — the Mic decoder's
+    reconstruction TARGET (always from the 'surface' mic source,
+    regardless of what audio_source the model's actual INPUT uses — see
+    LetterDatasetCTC.__getitem__) -> (B, 1, N_MELS, T_max), padded
+    independently from the input `audio` above, since the two can have
+    slightly different native frame counts (see train_ctc.py's
+    compute_spec_loss, which interpolates to reconcile this)."""
+    audios, imus, targets, trajs, surface_audios = zip(*batch)
 
     audio_lengths = torch.tensor([a.shape[2] for a in audios], dtype=torch.long)
     audio_max_t = int(audio_lengths.max())
@@ -330,5 +347,11 @@ def collate_fn_ctc(batch):
         if t is not None:
             traj_padded[i, :, :t.shape[1]] = t
 
+    surface_lengths = torch.tensor([s.shape[2] for s in surface_audios], dtype=torch.long)
+    surface_max_t = int(surface_lengths.max())
+    surface_padded = torch.stack([
+        F.pad(s, (0, surface_max_t - s.shape[2])) for s in surface_audios
+    ])   # (B, 1, N_MELS, T_max)
+
     return (audio_padded, audio_lengths, imu_padded, imu_lengths, targets_concat, target_lengths,
-            traj_padded, traj_lengths, has_traj)
+            traj_padded, traj_lengths, has_traj, surface_padded, surface_lengths)
