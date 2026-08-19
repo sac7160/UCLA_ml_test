@@ -36,6 +36,8 @@ class AudioEncoderCTC(nn.Module):
     much shorter T' is than T — LetterCTCNet.forward() uses it to keep
     output_lengths consistent with the actual tensor shape."""
     TIME_DOWNSAMPLE = 4   # two stride-2 poolings below
+    MIN_T = 4   # smallest T that can survive two stride-2 MaxPool2d without collapsing to 0 —
+                # see forward()'s padding guard below
 
     def __init__(self, out_channels: int = 64):
         super().__init__()
@@ -50,6 +52,17 @@ class AudioEncoderCTC(nn.Module):
                                                             # 1, leave the time dim exactly as-is
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
+        if x.shape[-1] < self.MIN_T:
+            # A very short trial (or a synthetic/cropped segment with
+            # barely any real audio in it) can have T small enough that
+            # two stride-2 MaxPool2d calls collapse it to 0 timesteps —
+            # max_pool2d then raises "Invalid computed output size: 0"
+            # rather than returning an empty tensor. Zero-padding up to
+            # MIN_T first avoids that crash; the padded region carries no
+            # real signal, but this only ever affects a handful of
+            # unusually short trials, not the model's behavior on normal-
+            # length input.
+            x = F.pad(x, (0, self.MIN_T - x.shape[-1]))
         x = self.conv(x)          # (B, C, F', T')
         x = self.freq_pool(x)     # (B, C, 1, T')
         x = x.squeeze(2)          # (B, C, T')
@@ -61,6 +74,10 @@ class IMUEncoderCTC(nn.Module):
     (B, T', C_out), same "keep time, downsample it a known amount" idea as
     AudioEncoderCTC."""
     TIME_DOWNSAMPLE = 4   # two stride-2 poolings below
+    MIN_T = 4   # smallest T that can survive two stride-2 MaxPool1d without collapsing to 0 —
+                # see forward()'s padding guard below (this is exactly the crash this was added to fix:
+                # RuntimeError: max_pool1d() Invalid computed output size: 0, on an IMU segment with too
+                # few real samples in it — e.g. a word trial with a stretch of poor fingertip tracking)
 
     def __init__(self, in_channels: int, out_channels: int = 64):
         super().__init__()
@@ -72,6 +89,8 @@ class IMUEncoderCTC(nn.Module):
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
+        if x.shape[-1] < self.MIN_T:
+            x = F.pad(x, (0, self.MIN_T - x.shape[-1]))
         x = self.conv(x)          # (B, C, T')
         return x.transpose(1, 2)  # (B, T', C)
 
