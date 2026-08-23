@@ -1,0 +1,902 @@
+[DATA] d: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] e: 3/3 trials usable (audio_source="watch", imu_source="watch")
+[DATA] f: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] g: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] h: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] i: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] j: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] k: 12/12 trials usable (audio_source="watch", imu_source="watch")
+[DATA] l: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] m: 7/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] n: 7/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] o: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] p: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] q: 13/13 trials usable (audio_source="watch", imu_source="watch")
+[DATA] r: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] s: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] t: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] u: 18/18 trials usable (audio_source="watch", imu_source="watch")
+[DATA] v: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] w: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] x: 7/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] y: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] z: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[SETUP]   p6: 202 trials
+[SETUP]   p6: 105 word trials
+[SETUP]   p6: 33 sentence trials
+[DATA] a: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] b: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] c: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] d: 13/13 trials usable (audio_source="watch", imu_source="watch")
+[DATA] e: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] f: 3/3 trials usable (audio_source="watch", imu_source="watch")
+[DATA] g: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] h: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] i: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[WARN] ..\dataset\p7\dataset\j\trial_006: watch_audio.wav has 0 audio frames — skipping (likely an interrupted/failed recording)
+[DATA] j: 8/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] k: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] l: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[WARN] ..\dataset\p7\dataset\m\trial_007: imu.csv has no data rows — skipping (likely an interrupted/failed recording)
+[DATA] m: 6/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] n: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] o: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] p: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] q: 7/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] r: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] s: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] t: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] u: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] v: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] w: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] x: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] y: 3/3 trials usable (audio_source="watch", imu_source="watch")
+[DATA] z: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[SETUP]   p7: 185 trials
+[WARN] ..\dataset\p7\dataset\word\trial_030: watch_audio.wav has 0 audio frames — skipping (likely an interrupted/failed recording)
+[SETUP]   p7: 68 word trials
+[SETUP]   p7: 25 sentence trials
+[DATA] a: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] b: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] c: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] d: 13/13 trials usable (audio_source="watch", imu_source="watch")
+[DATA] e: 12/12 trials usable (audio_source="watch", imu_source="watch")
+[DATA] f: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] g: 13/13 trials usable (audio_source="watch", imu_source="watch")
+[DATA] h: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] i: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] j: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] k: 7/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] l: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] m: 12/12 trials usable (audio_source="watch", imu_source="watch")
+[DATA] n: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] o: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] p: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] q: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] r: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] s: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] t: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] u: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] v: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] w: 12/12 trials usable (audio_source="watch", imu_source="watch")
+[DATA] x: 13/13 trials usable (audio_source="watch", imu_source="watch")
+[DATA] y: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] z: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[SETUP]   p8: 241 trials
+[SETUP]   p8: 88 word trials
+[SETUP]   p8: 33 sentence trials
+[DATA] a: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] b: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] c: 5/5 trials usable (audio_source="watch", imu_source="watch")
+[DATA] d: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] e: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] f: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] g: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] h: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] i: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] j: 7/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] k: 7/7 trials usable (audio_source="watch", imu_source="watch")
+[DATA] l: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] m: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] n: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] o: 6/6 trials usable (audio_source="watch", imu_source="watch")
+[DATA] p: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] q: 14/14 trials usable (audio_source="watch", imu_source="watch")
+[DATA] r: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] s: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] t: 13/13 trials usable (audio_source="watch", imu_source="watch")
+[DATA] u: 4/4 trials usable (audio_source="watch", imu_source="watch")
+[DATA] v: 9/9 trials usable (audio_source="watch", imu_source="watch")
+[DATA] w: 8/8 trials usable (audio_source="watch", imu_source="watch")
+[DATA] x: 11/11 trials usable (audio_source="watch", imu_source="watch")
+[DATA] y: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[DATA] z: 10/10 trials usable (audio_source="watch", imu_source="watch")
+[SETUP]   p9: 221 trials
+[SETUP]   p9: 94 word trials
+[SETUP]   p9: 30 sentence trials
+[SETUP] real word/sentence trials: 831 train / 178 val / 178 test — only the train portion is used below; evaluate_word_ctc.py should be pointed at just the test portion (see splits.json) for a number that isn't inflated by trials the model was trained on directly
+[SETUP] 1553 train / 334 val / 334 test trials  (classes=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'], modality="fusion")
+[SETUP] +3000 synthetic multi-letter examples per epoch (2-12 letters each) available alongside 1553 real single-letter trials
+[SETUP] +831 real word/sentence trials available for training (209 sentence, weighted x5.0; 622 word, weighted x1.0)
+[CURRICULUM] epoch 1: letters only (stage 1, 5000 steps)
+[EPOCH   1/200] train_loss=5.1984  val_loss=3.3261  val_letter_acc=0.039  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->e, q->e, y->e, o->e, b->e, c->e, j->e, v->e
+[EPOCH   2/200] train_loss=3.6890  val_loss=3.2846  val_letter_acc=0.048  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->p, q->p, y->p, o->p, b->c, c->c, j->c, v->p
+[EPOCH   3/200] train_loss=3.6379  val_loss=3.1846  val_letter_acc=0.060  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->d, q->z, y->w, o->g, b->d, c->g, j->d, v->w
+[EPOCH   4/200] train_loss=3.4669  val_loss=2.9279  val_letter_acc=0.087  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->n, q->c, y->n, o->n, b->n, c->c, j->n, v->n
+[EPOCH   5/200] train_loss=3.0632  val_loss=2.5362  val_letter_acc=0.228  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->n, q->q, y->p, o->n, b->n, c->c, j->n, v->r
+  [WORD VAL] normalized_edit_distance=0.971  mean_edit_distance=10.49  exact_accuracy=0.000
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"n", "these cookies are so amazing"->"z", "the dow jones index has risen"->"z", "deserve"->"a", "me"->"n"
+  [WORD VAL] new best — checkpoint saved (epoch 5)
+[EPOCH   6/200] train_loss=2.6381  val_loss=1.9563  val_letter_acc=0.410  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->p, q->q, y->y, o->j, b->p, c->c, j->j, v->b
+[EPOCH   7/200] train_loss=1.9884  val_loss=1.4131  val_letter_acc=0.569  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->d, y->y, o->r, b->b, c->c, j->j, v->s
+[EPOCH   8/200] train_loss=1.6662  val_loss=1.3804  val_letter_acc=0.605  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->p, c->c, j->j, v->t
+[EPOCH   9/200] train_loss=1.4092  val_loss=1.2800  val_letter_acc=0.626  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  10/200] train_loss=1.1803  val_loss=1.1644  val_letter_acc=0.665  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.976  mean_edit_distance=10.53  exact_accuracy=0.000
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"m", "these cookies are so amazing"->"z", "the dow jones index has risen"->"m", "deserve"->"j", "me"->"w"
+[EPOCH  11/200] train_loss=1.0556  val_loss=1.1407  val_letter_acc=0.701  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->a
+[EPOCH  12/200] train_loss=1.0171  val_loss=1.0425  val_letter_acc=0.722  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  13/200] train_loss=0.8812  val_loss=1.0472  val_letter_acc=0.740  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->v
+[EPOCH  14/200] train_loss=0.8542  val_loss=1.0444  val_letter_acc=0.710  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH  15/200] train_loss=0.8384  val_loss=0.9589  val_letter_acc=0.760  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->x
+  [WORD VAL] normalized_edit_distance=0.973  mean_edit_distance=10.51  exact_accuracy=0.000
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"m", "these cookies are so amazing"->"w", "the dow jones index has risen"->"u", "deserve"->"j", "me"->"q"
+[EPOCH  16/200] train_loss=0.8151  val_loss=0.9350  val_letter_acc=0.772  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  17/200] train_loss=0.7049  val_loss=0.8752  val_letter_acc=0.772  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  18/200] train_loss=0.6915  val_loss=1.0759  val_letter_acc=0.751  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH  19/200] train_loss=0.6736  val_loss=0.9973  val_letter_acc=0.769  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->f
+[EPOCH  20/200] train_loss=0.6327  val_loss=1.0157  val_letter_acc=0.772  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->d, y->y, o->r, b->b, c->c, j->j, v->s
+  [WORD VAL] normalized_edit_distance=0.972  mean_edit_distance=10.49  exact_accuracy=0.000
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"m", "these cookies are so amazing"->"m", "the dow jones index has risen"->"z", "deserve"->"j", "me"->"q"
+[EPOCH  21/200] train_loss=0.7985  val_loss=0.9470  val_letter_acc=0.778  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->e
+[EPOCH  22/200] train_loss=0.6075  val_loss=0.9789  val_letter_acc=0.760  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  23/200] train_loss=0.5767  val_loss=1.0822  val_letter_acc=0.763  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->d, y->y, o->r, b->b, c->a, j->j, v->l
+[EPOCH  24/200] train_loss=0.5399  val_loss=0.9613  val_letter_acc=0.811  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->s
+[EPOCH  25/200] train_loss=0.5786  val_loss=1.0654  val_letter_acc=0.793  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->x
+  [WORD VAL] normalized_edit_distance=0.976  mean_edit_distance=10.54  exact_accuracy=0.000
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"m", "these cookies are so amazing"->"m", "the dow jones index has risen"->"x", "deserve"->"j", "me"->"q"
+[EPOCH  26/200] train_loss=0.5928  val_loss=1.1000  val_letter_acc=0.778  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->x
+[CURRICULUM] epoch 27 (step 5070): now training on letters + synthetic concat
+[EPOCH  27/200] train_loss=2.3268  val_loss=1.8713  val_letter_acc=0.569  (blank-only predictions: 14%)                             
+  sample (true -> predicted): j->j, q->d, y->y, o->(blank), b->(blank), c->c, j->j, v->h
+[EPOCH  28/200] train_loss=1.0787  val_loss=1.8459  val_letter_acc=0.530  (blank-only predictions: 20%)                             
+  sample (true -> predicted): j->o, q->(blank), y->y, o->(blank), b->(blank), c->(blank), j->j, v->b
+[EPOCH  29/200] train_loss=0.8187  val_loss=1.8403  val_letter_acc=0.617  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  30/200] train_loss=0.6701  val_loss=1.7698  val_letter_acc=0.602  (blank-only predictions: 10%)                             
+  sample (true -> predicted): j->o, q->qq, y->y, o->(blank), b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.802  mean_edit_distance=8.66  exact_accuracy=0.028
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"weemtptom", "these cookies are so amazing"->"iboooare", "the dow jones index has risen"->"zuan", "deserve"->"aecow", "me"->"mc"
+  [WORD VAL] new best — checkpoint saved (epoch 30)
+[EPOCH  31/200] train_loss=0.6268  val_loss=2.1424  val_letter_acc=0.554  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->(blank), y->w, o->r, b->b, c->c, j->j, v->b
+[EPOCH  32/200] train_loss=0.5599  val_loss=2.7211  val_letter_acc=0.506  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->y, q->d, y->y, o->(blank), b->b, c->c, j->j, v->b
+[EPOCH  33/200] train_loss=0.5324  val_loss=2.5433  val_letter_acc=0.545  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->o, q->a, y->y, o->u, b->b, c->c, j->j, v->b
+[EPOCH  34/200] train_loss=0.5030  val_loss=2.2139  val_letter_acc=0.569  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->z, q->a, y->y, o->r, b->b, c->c, j->j, v->a
+[EPOCH  35/200] train_loss=0.4830  val_loss=2.2207  val_letter_acc=0.578  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->o, q->(blank), y->y, o->r, b->b, c->c, j->o, v->b
+  [WORD VAL] normalized_edit_distance=0.777  mean_edit_distance=8.39  exact_accuracy=0.011
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"oeertbtrcm", "these cookies are so amazing"->"oeeoe", "the dow jones index has risen"->"cuksdr", "deserve"->"keocowk", "me"->"mce"
+  [WORD VAL] new best — checkpoint saved (epoch 35)
+[CURRICULUM] epoch 36 (step 10200): now training on letters + synthetic concat + real word/sentence
+[EPOCH  36/200] train_loss=1.4769  val_loss=1.9801  val_letter_acc=0.644  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH  37/200] train_loss=1.1828  val_loss=2.2010  val_letter_acc=0.554  (blank-only predictions: 10%)                             
+  sample (true -> predicted): j->o, q->(blank), y->y, o->r, b->(blank), c->c, j->(blank), v->fa
+[EPOCH  38/200] train_loss=1.0816  val_loss=1.9347  val_letter_acc=0.617  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->o, q->d, y->y, o->(blank), b->b, c->c, j->j, v->f
+[EPOCH  39/200] train_loss=0.9671  val_loss=1.7094  val_letter_acc=0.656  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->z, q->(blank), y->y, o->j, b->b, c->c, j->j, v->a
+[EPOCH  40/200] train_loss=0.9266  val_loss=1.7900  val_letter_acc=0.671  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->(blank), b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.473  mean_edit_distance=5.11  exact_accuracy=0.140
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"pwtssrtpirm", "these cookies are so amazing"->"hesecooliesareesopedmustin", "the dow jones index has risen"->"thedlidmoomesistmueigeasmisen", "deserve"->"aetti", "me"->"we"
+  [WORD VAL] new best — checkpoint saved (epoch 40)
+[EPOCH  41/200] train_loss=0.9036  val_loss=2.1695  val_letter_acc=0.584  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->u, q->q, y->y, o->(blank), b->b, c->c, j->j, v->b
+[EPOCH  42/200] train_loss=0.8026  val_loss=1.9127  val_letter_acc=0.659  (blank-only predictions: 8%)                              
+  sample (true -> predicted): j->(blank), q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  43/200] train_loss=0.8128  val_loss=1.9392  val_letter_acc=0.635  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->(blank), q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  44/200] train_loss=0.7657  val_loss=1.6785  val_letter_acc=0.680  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->s, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  45/200] train_loss=0.7227  val_loss=1.9025  val_letter_acc=0.683  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->(blank), y->y, o->r, b->b, c->c, j->j, v->a
+  [WORD VAL] normalized_edit_distance=0.382  mean_edit_distance=4.13  exact_accuracy=0.219
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"puescriptron", "these cookies are so amazing"->"ehesecoldleeseareessoeamuiin", "the dow jones index has risen"->"thediagoamesimdeasmisen", "deserve"->"aectwi", "me"->"we"
+  [WORD VAL] new best — checkpoint saved (epoch 45)
+[EPOCH  46/200] train_loss=0.7324  val_loss=1.7352  val_letter_acc=0.683  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  47/200] train_loss=0.6990  val_loss=1.8936  val_letter_acc=0.662  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH  48/200] train_loss=0.7295  val_loss=1.9618  val_letter_acc=0.653  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH  49/200] train_loss=0.6924  val_loss=1.6538  val_letter_acc=0.710  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->qq, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  50/200] train_loss=0.6723  val_loss=2.1361  val_letter_acc=0.623  (blank-only predictions: 9%)                              
+  sample (true -> predicted): j->(blank), q->q, y->y, o->(blank), b->b, c->c, j->j, v->n
+  [WORD VAL] normalized_edit_distance=0.382  mean_edit_distance=4.13  exact_accuracy=0.157
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"pressrptroon", "these cookies are so amazing"->"hesecoodiesdrespdmuiiin", "the dow jones index has risen"->"thedidanessimdelhaspien", "deserve"->"aetvi", "me"->"we"
+  [WORD VAL] new best — checkpoint saved (epoch 50)
+[EPOCH  51/200] train_loss=0.6672  val_loss=1.8206  val_letter_acc=0.665  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->(blank), v->g
+[EPOCH  52/200] train_loss=0.6398  val_loss=1.4930  val_letter_acc=0.734  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->y, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  53/200] train_loss=0.6541  val_loss=1.6208  val_letter_acc=0.722  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->qq, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  54/200] train_loss=0.6329  val_loss=1.7619  val_letter_acc=0.695  (blank-only predictions: 8%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->h
+[EPOCH  55/200] train_loss=0.6139  val_loss=1.8663  val_letter_acc=0.695  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->o, b->b, c->c, j->j, v->k
+  [WORD VAL] normalized_edit_distance=0.343  mean_edit_distance=3.71  exact_accuracy=0.197
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescrptron", "these cookies are so amazing"->"heseocoodieeserespeamuizin", "the dow jones index has risen"->"theaxuycamesimaenlhasmisen", "deserve"->"aectwi", "me"->"wue"
+  [WORD VAL] new best — checkpoint saved (epoch 55)
+[EPOCH  56/200] train_loss=0.6299  val_loss=1.8965  val_letter_acc=0.695  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->o
+[EPOCH  57/200] train_loss=0.6167  val_loss=2.4382  val_letter_acc=0.683  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  58/200] train_loss=0.6169  val_loss=1.9398  val_letter_acc=0.680  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  59/200] train_loss=0.5980  val_loss=1.5986  val_letter_acc=0.731  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH  60/200] train_loss=0.6130  val_loss=1.8245  val_letter_acc=0.665  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->qq, y->y, o->r, b->b, c->c, j->j, v->f
+  [WORD VAL] normalized_edit_distance=0.337  mean_edit_distance=3.64  exact_accuracy=0.242
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescriptron", "these cookies are so amazing"->"ehesecoodieeareespdmuiii", "the dow jones index has risen"->"theedtirigoamesiimuethasrisenv", "deserve"->"aetvih", "me"->"me"
+  [WORD VAL] new best — checkpoint saved (epoch 60)
+[EPOCH  61/200] train_loss=0.6057  val_loss=2.0703  val_letter_acc=0.674  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH  62/200] train_loss=0.5757  val_loss=1.6681  val_letter_acc=0.704  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->s, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  63/200] train_loss=0.5714  val_loss=1.7449  val_letter_acc=0.662  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->e, j->j, v->f
+[EPOCH  64/200] train_loss=0.6166  val_loss=1.8546  val_letter_acc=0.686  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->(blank), q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH  65/200] train_loss=0.5944  val_loss=1.8913  val_letter_acc=0.686  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->a
+  [WORD VAL] normalized_edit_distance=0.344  mean_edit_distance=3.72  exact_accuracy=0.197
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"preskriptrom", "these cookies are so amazing"->"thesecookiesaresoamuii", "the dow jones index has risen"->"theeuufamesimueuhaspisen", "deserve"->"cecrwin", "me"->"we"
+[EPOCH  66/200] train_loss=0.5638  val_loss=1.8190  val_letter_acc=0.719  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->y, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  67/200] train_loss=0.5694  val_loss=1.6891  val_letter_acc=0.716  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->d, y->y, o->r, b->p, c->c, j->j, v->b
+[EPOCH  68/200] train_loss=0.5793  val_loss=2.2697  val_letter_acc=0.608  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->j, b->b, c->c, j->j, v->l
+[EPOCH  69/200] train_loss=0.6111  val_loss=1.7736  val_letter_acc=0.716  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->a
+[EPOCH  70/200] train_loss=0.5836  val_loss=1.9038  val_letter_acc=0.644  (blank-only predictions: 10%)                             
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->m
+  [WORD VAL] normalized_edit_distance=0.349  mean_edit_distance=3.76  exact_accuracy=0.185
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"preskritrion", "these cookies are so amazing"->"hesecoodearesoamuisin", "the dow jones index has risen"->"thedaajanesindehaspisem", "deserve"->"cecatwih", "me"->"we"
+[EPOCH  71/200] train_loss=0.5620  val_loss=1.7458  val_letter_acc=0.728  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  72/200] train_loss=0.5730  val_loss=2.1386  val_letter_acc=0.650  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->g, v->b
+[EPOCH  73/200] train_loss=0.5861  val_loss=2.1315  val_letter_acc=0.620  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->qq, y->y, o->w, b->b, c->q, j->j, v->g
+[EPOCH  74/200] train_loss=0.6169  val_loss=1.9460  val_letter_acc=0.680  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH  75/200] train_loss=0.5830  val_loss=1.9216  val_letter_acc=0.716  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.305  mean_edit_distance=3.30  exact_accuracy=0.230
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"ppeskrtptron", "these cookies are so amazing"->"ehesecoodiesaresoeamuztin", "the dow jones index has risen"->"theediowfonesindenthasnisen", "deserve"->"aescnvt", "me"->"wae"
+  [WORD VAL] new best — checkpoint saved (epoch 75)
+[EPOCH  76/200] train_loss=0.5709  val_loss=1.6827  val_letter_acc=0.737  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->a
+[EPOCH  77/200] train_loss=0.5325  val_loss=2.3631  val_letter_acc=0.683  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  78/200] train_loss=0.5657  val_loss=1.8636  val_letter_acc=0.674  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->(blank), c->c, j->j, v->r
+[EPOCH  79/200] train_loss=0.5622  val_loss=1.5938  val_letter_acc=0.749  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  80/200] train_loss=0.5895  val_loss=1.6536  val_letter_acc=0.734  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->u, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.313  mean_edit_distance=3.38  exact_accuracy=0.230
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"ppestrtption", "these cookies are so amazing"->"thesecoodiesaresoamuiin", "the dow jones index has risen"->"thedowgohesindexhasmisen", "deserve"->"aeabh", "me"->"we"
+[EPOCH  81/200] train_loss=0.5613  val_loss=2.1872  val_letter_acc=0.701  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->f
+[EPOCH  82/200] train_loss=0.5493  val_loss=2.0569  val_letter_acc=0.689  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->t
+[EPOCH  83/200] train_loss=0.5422  val_loss=1.7898  val_letter_acc=0.743  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->p
+[EPOCH  84/200] train_loss=0.5443  val_loss=1.8497  val_letter_acc=0.707  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH  85/200] train_loss=0.5567  val_loss=1.9297  val_letter_acc=0.713  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->f
+  [WORD VAL] normalized_edit_distance=0.302  mean_edit_distance=3.26  exact_accuracy=0.247
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presssription", "these cookies are so amazing"->"thesecoodiesearesoamuin", "the dow jones index has risen"->"theedowgonesindeihasnisen", "deserve"->"aervih", "me"->"me"
+  [WORD VAL] new best — checkpoint saved (epoch 85)
+[EPOCH  86/200] train_loss=0.5189  val_loss=1.8975  val_letter_acc=0.701  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  87/200] train_loss=0.5512  val_loss=1.4640  val_letter_acc=0.784  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH  88/200] train_loss=0.5877  val_loss=1.8558  val_letter_acc=0.734  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->o
+[EPOCH  89/200] train_loss=0.5395  val_loss=1.6339  val_letter_acc=0.746  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->j, b->b, c->c, j->j, v->g
+[EPOCH  90/200] train_loss=0.5623  val_loss=1.6928  val_letter_acc=0.737  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->o, b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.302  mean_edit_distance=3.26  exact_accuracy=0.298
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presskription", "these cookies are so amazing"->"thesecookiesaresodmusiii", "the dow jones index has risen"->"theduwioamesindexhaspisem", "deserve"->"aerwn", "me"->"me"
+[EPOCH  91/200] train_loss=0.5467  val_loss=1.7914  val_letter_acc=0.704  (blank-only predictions: 10%)                             
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->e
+[EPOCH  92/200] train_loss=0.5424  val_loss=1.6938  val_letter_acc=0.713  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->k
+[EPOCH  93/200] train_loss=0.5200  val_loss=1.6711  val_letter_acc=0.731  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH  94/200] train_loss=0.5125  val_loss=1.7033  val_letter_acc=0.731  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH  95/200] train_loss=0.5390  val_loss=1.7185  val_letter_acc=0.731  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+  [WORD VAL] normalized_edit_distance=0.320  mean_edit_distance=3.46  exact_accuracy=0.225
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"preserptron", "these cookies are so amazing"->"thesecookiesearesodumuin", "the dow jones index has risen"->"thhedowgomesimdexhasrisen", "deserve"->"aetwi", "me"->"we"
+[EPOCH  96/200] train_loss=0.5670  val_loss=1.6674  val_letter_acc=0.746  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->f
+[EPOCH  97/200] train_loss=0.5035  val_loss=1.7130  val_letter_acc=0.746  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH  98/200] train_loss=0.5161  val_loss=2.0932  val_letter_acc=0.710  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH  99/200] train_loss=0.5170  val_loss=1.5778  val_letter_acc=0.734  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 100/200] train_loss=0.5094  val_loss=1.7592  val_letter_acc=0.734  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+  [WORD VAL] normalized_edit_distance=0.315  mean_edit_distance=3.40  exact_accuracy=0.197
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"preskrtptiron", "these cookies are so amazing"->"thesecookiesaresoamuin", "the dow jones index has risen"->"thedouigonesindethasmisen", "deserve"->"aecwi", "me"->"me"
+[EPOCH 101/200] train_loss=0.5424  val_loss=1.8341  val_letter_acc=0.689  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->j, b->b, c->c, j->j, v->r
+[EPOCH 102/200] train_loss=0.5309  val_loss=1.6602  val_letter_acc=0.743  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 103/200] train_loss=0.5146  val_loss=1.8322  val_letter_acc=0.728  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->f
+[EPOCH 104/200] train_loss=0.5201  val_loss=1.7976  val_letter_acc=0.746  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 105/200] train_loss=0.4843  val_loss=1.6556  val_letter_acc=0.754  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.322  mean_edit_distance=3.47  exact_accuracy=0.197
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescription", "these cookies are so amazing"->"thhesepcooouiesdresodmeuin", "the dow jones index has risen"->"thheeddomisomesiindeeighaspisen", "deserve"->"ecovit", "me"->"we"
+[EPOCH 106/200] train_loss=0.5263  val_loss=1.8281  val_letter_acc=0.731  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->zu, q->q, y->y, o->j, b->b, c->c, j->j, v->b
+[EPOCH 107/200] train_loss=0.5178  val_loss=1.7102  val_letter_acc=0.743  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->p
+[EPOCH 108/200] train_loss=0.5015  val_loss=1.6010  val_letter_acc=0.710  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 109/200] train_loss=0.5088  val_loss=1.8648  val_letter_acc=0.716  (blank-only predictions: 9%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->p
+[EPOCH 110/200] train_loss=0.5299  val_loss=2.0896  val_letter_acc=0.677  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->h
+  [WORD VAL] normalized_edit_distance=0.328  mean_edit_distance=3.54  exact_accuracy=0.185
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescription", "these cookies are so amazing"->"hesecoodiesaresoamaii", "the dow jones index has risen"->"thedouomesiindexhasmisem", "deserve"->"aeiih", "me"->"me"
+[EPOCH 111/200] train_loss=0.5183  val_loss=1.5572  val_letter_acc=0.766  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 112/200] train_loss=0.5149  val_loss=1.6609  val_letter_acc=0.757  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 113/200] train_loss=0.5062  val_loss=1.6448  val_letter_acc=0.751  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 114/200] train_loss=0.5035  val_loss=1.5017  val_letter_acc=0.769  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 115/200] train_loss=0.5058  val_loss=1.9199  val_letter_acc=0.728  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->ec, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.299  mean_edit_distance=3.22  exact_accuracy=0.219
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"preriptiroon", "these cookies are so amazing"->"thhesecoodjesarespadmuin", "the dow jones index has risen"->"thedougoesindexhashisen", "deserve"->"aeseobvl", "me"->"we"
+  [WORD VAL] new best — checkpoint saved (epoch 115)
+[EPOCH 116/200] train_loss=0.5287  val_loss=1.5933  val_letter_acc=0.731  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->j, q->qq, y->y, o->r, b->b, c->c, j->j, v->(blank)
+[EPOCH 117/200] train_loss=0.4899  val_loss=1.6494  val_letter_acc=0.754  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->qq, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 118/200] train_loss=0.5130  val_loss=1.6438  val_letter_acc=0.722  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 119/200] train_loss=0.5028  val_loss=2.0655  val_letter_acc=0.704  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->u, q->q, y->y, o->r, b->b, c->c, j->j, v->(blank)
+[EPOCH 120/200] train_loss=0.5989  val_loss=1.5314  val_letter_acc=0.763  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.325  mean_edit_distance=3.51  exact_accuracy=0.247
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presrtntron", "these cookies are so amazing"->"hhesecoodreuresodmuzin", "the dow jones index has risen"->"thedwwyamesimexhasmisem", "deserve"->"aecw", "me"->"me"
+[EPOCH 121/200] train_loss=0.4954  val_loss=1.7239  val_letter_acc=0.737  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 122/200] train_loss=0.4898  val_loss=2.0415  val_letter_acc=0.740  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 123/200] train_loss=0.5022  val_loss=1.5834  val_letter_acc=0.746  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->(blank), v->h
+[EPOCH 124/200] train_loss=0.5138  val_loss=1.5350  val_letter_acc=0.766  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 125/200] train_loss=0.5156  val_loss=1.5576  val_letter_acc=0.772  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+  [WORD VAL] normalized_edit_distance=0.287  mean_edit_distance=3.10  exact_accuracy=0.287
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presriptron", "these cookies are so amazing"->"thesecoouresaresoamuin", "the dow jones index has risen"->"thedowgnesindexhasmisen", "deserve"->"aecowt", "me"->"me"
+  [WORD VAL] new best — checkpoint saved (epoch 125)
+[EPOCH 126/200] train_loss=0.5232  val_loss=1.7712  val_letter_acc=0.772  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH 127/200] train_loss=0.4784  val_loss=1.6861  val_letter_acc=0.751  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 128/200] train_loss=0.4917  val_loss=1.8473  val_letter_acc=0.695  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->j, v->b
+[EPOCH 129/200] train_loss=0.4975  val_loss=1.9608  val_letter_acc=0.713  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->u, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 130/200] train_loss=0.5045  val_loss=2.6427  val_letter_acc=0.647  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.328  mean_edit_distance=3.54  exact_accuracy=0.174
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presrrptron", "these cookies are so amazing"->"lhesecollesaresoaumazin", "the dow jones index has risen"->"thedomiyonesindexhasrisen", "deserve"->"alcov", "me"->"we"
+[EPOCH 131/200] train_loss=0.5252  val_loss=1.6695  val_letter_acc=0.746  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 132/200] train_loss=0.4754  val_loss=2.0154  val_letter_acc=0.725  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->a
+[EPOCH 133/200] train_loss=0.5060  val_loss=2.0235  val_letter_acc=0.734  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->j, v->b
+[EPOCH 134/200] train_loss=0.5047  val_loss=1.7057  val_letter_acc=0.716  (blank-only predictions: 8%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 135/200] train_loss=0.4793  val_loss=1.7612  val_letter_acc=0.740  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+  [WORD VAL] normalized_edit_distance=0.327  mean_edit_distance=3.53  exact_accuracy=0.208
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presritrcon", "these cookies are so amazing"->"thesecoodlesaresoodmuitiin", "the dow jones index has risen"->"thediowionesindexhasmisen", "deserve"->"aecbwi", "me"->"me"
+[EPOCH 136/200] train_loss=0.4847  val_loss=1.8512  val_letter_acc=0.710  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->ju, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH 137/200] train_loss=0.4960  val_loss=2.2367  val_letter_acc=0.665  (blank-only predictions: 8%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->a
+[EPOCH 138/200] train_loss=0.5403  val_loss=1.9039  val_letter_acc=0.728  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->jh, q->q, y->y, o->h, b->b, c->c, j->j, v->a
+[EPOCH 139/200] train_loss=0.4786  val_loss=1.7897  val_letter_acc=0.749  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 140/200] train_loss=0.4748  val_loss=2.1239  val_letter_acc=0.704  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->y, v->b
+  [WORD VAL] normalized_edit_distance=0.318  mean_edit_distance=3.43  exact_accuracy=0.202
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescrtgtron", "these cookies are so amazing"->"thesecoodiesaresoamazin", "the dow jones index has risen"->"theeoutonesindexxhaspisen", "deserve"->"aeselwi", "me"->"me"
+[EPOCH 141/200] train_loss=0.4922  val_loss=1.7338  val_letter_acc=0.722  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->p, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 142/200] train_loss=0.4925  val_loss=2.1974  val_letter_acc=0.641  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->j, v->h
+[EPOCH 143/200] train_loss=0.5106  val_loss=2.0234  val_letter_acc=0.719  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->j, v->g
+[EPOCH 144/200] train_loss=0.4856  val_loss=1.9138  val_letter_acc=0.743  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->(blank), q->q, y->y, o->h, b->b, c->c, j->j, v->r
+[EPOCH 145/200] train_loss=0.5093  val_loss=1.8575  val_letter_acc=0.701  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->f
+  [WORD VAL] normalized_edit_distance=0.294  mean_edit_distance=3.17  exact_accuracy=0.230
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"pressripton", "these cookies are so amazing"->"thesecoodiesdrespeamuink", "the dow jones index has risen"->"thediowsonesindexhashisen", "deserve"->"aescnwik", "me"->"we"
+[EPOCH 146/200] train_loss=0.5106  val_loss=1.7433  val_letter_acc=0.734  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 147/200] train_loss=0.4720  val_loss=1.6728  val_letter_acc=0.757  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->j, v->o
+[EPOCH 148/200] train_loss=0.4834  val_loss=2.0879  val_letter_acc=0.749  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->y, q->q, y->y, o->r, b->b, c->c, j->j, v->h
+[EPOCH 149/200] train_loss=0.5151  val_loss=1.8819  val_letter_acc=0.760  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->o
+[EPOCH 150/200] train_loss=0.4904  val_loss=1.5871  val_letter_acc=0.769  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->o, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.317  mean_edit_distance=3.42  exact_accuracy=0.219
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescriptroon", "these cookies are so amazing"->"ithesecooddlesaresodmuisil", "the dow jones index has risen"->"theeomjomesimdeexhasmisem", "deserve"->"aeepvi", "me"->"we"
+[EPOCH 151/200] train_loss=0.4785  val_loss=1.6291  val_letter_acc=0.766  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->a
+[EPOCH 152/200] train_loss=0.5065  val_loss=1.8487  val_letter_acc=0.743  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->ju, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 153/200] train_loss=0.4971  val_loss=1.6696  val_letter_acc=0.728  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->jn, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 154/200] train_loss=0.4720  val_loss=1.5503  val_letter_acc=0.757  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 155/200] train_loss=0.4947  val_loss=1.9629  val_letter_acc=0.698  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.315  mean_edit_distance=3.40  exact_accuracy=0.225
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presskrtptrom", "these cookies are so amazing"->"thesecoooiesarespomusin", "the dow jones index has risen"->"thedowyomesihdexhhasmisem", "deserve"->"peowi", "me"->"me"
+[EPOCH 156/200] train_loss=0.5067  val_loss=1.8604  val_letter_acc=0.757  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->ju, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 157/200] train_loss=0.4807  val_loss=1.8306  val_letter_acc=0.704  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->bp, c->c, j->j, v->h
+[EPOCH 158/200] train_loss=0.4864  val_loss=1.6734  val_letter_acc=0.749  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 159/200] train_loss=0.4603  val_loss=1.7908  val_letter_acc=0.754  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 160/200] train_loss=0.5119  val_loss=1.6789  val_letter_acc=0.760  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.288  mean_edit_distance=3.11  exact_accuracy=0.326
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"pressriptrcon", "these cookies are so amazing"->"thesecookiesaresoamusin", "the dow jones index has risen"->"thedowgonesindeldhaspisen", "deserve"->"aescnwinl", "me"->"mc"
+[EPOCH 161/200] train_loss=0.4935  val_loss=1.9484  val_letter_acc=0.725  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->o, b->p, c->c, j->y, v->r
+[EPOCH 162/200] train_loss=0.5023  val_loss=1.9695  val_letter_acc=0.751  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->y, v->h
+[EPOCH 163/200] train_loss=0.4604  val_loss=1.9256  val_letter_acc=0.719  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->j, v->b
+[EPOCH 164/200] train_loss=0.4760  val_loss=2.1803  val_letter_acc=0.704  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->j, b->p, c->c, j->oj, v->b
+[EPOCH 165/200] train_loss=0.4663  val_loss=1.8123  val_letter_acc=0.725  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.324  mean_edit_distance=3.50  exact_accuracy=0.236
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presrtptron", "these cookies are so amazing"->"quesediesdresumusin", "the dow jones index has risen"->"thedomyomesindexdhasmisen", "deserve"->"aeswi", "me"->"we"
+[EPOCH 166/200] train_loss=0.4948  val_loss=1.7607  val_letter_acc=0.754  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->o
+[EPOCH 167/200] train_loss=0.4837  val_loss=1.6115  val_letter_acc=0.775  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 168/200] train_loss=0.4877  val_loss=1.7112  val_letter_acc=0.775  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->c, j->j, v->b
+[EPOCH 169/200] train_loss=0.4820  val_loss=1.5976  val_letter_acc=0.740  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->p, b->b, c->c, j->j, v->n
+[EPOCH 170/200] train_loss=0.4887  val_loss=1.8917  val_letter_acc=0.772  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->bp, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.280  mean_edit_distance=3.02  exact_accuracy=0.331
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"pressriptron", "these cookies are so amazing"->"thesecooolesaresoamuzil", "the dow jones index has risen"->"thediowyonesindewthaspisep", "deserve"->"aecrwink", "me"->"me"
+  [WORD VAL] new best — checkpoint saved (epoch 170)
+[EPOCH 171/200] train_loss=0.4822  val_loss=1.9520  val_letter_acc=0.751  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 172/200] train_loss=0.4822  val_loss=2.0131  val_letter_acc=0.737  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 173/200] train_loss=0.5021  val_loss=1.5372  val_letter_acc=0.763  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 174/200] train_loss=0.4646  val_loss=1.6337  val_letter_acc=0.757  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->p, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 175/200] train_loss=0.4899  val_loss=1.8503  val_letter_acc=0.704  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->s, q->q, y->y, o->r, b->b, c->e, j->j, v->l
+  [WORD VAL] normalized_edit_distance=0.322  mean_edit_distance=3.47  exact_accuracy=0.213
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescription", "these cookies are so amazing"->"ehesecooulesarespamasin", "the dow jones index has risen"->"thedowssonesindexhasmisep", "deserve"->"aeenvn", "me"->"we"
+[EPOCH 176/200] train_loss=0.4825  val_loss=1.6857  val_letter_acc=0.749  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->(blank), q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 177/200] train_loss=0.4616  val_loss=1.6527  val_letter_acc=0.760  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->e, j->j, v->b
+[EPOCH 178/200] train_loss=0.4627  val_loss=1.5851  val_letter_acc=0.778  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->(blank), b->b, c->c, j->j, v->g
+[EPOCH 179/200] train_loss=0.4845  val_loss=2.1648  val_letter_acc=0.725  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->w, b->b, c->c, j->j, v->b
+[EPOCH 180/200] train_loss=0.4804  val_loss=1.8409  val_letter_acc=0.731  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->o
+  [WORD VAL] normalized_edit_distance=0.271  mean_edit_distance=2.93  exact_accuracy=0.275
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescritptircon", "these cookies are so amazing"->"dhesecooklesaresoamuisin", "the dow jones index has risen"->"thedowsonesindelhasmisen", "deserve"->"aeseovil", "me"->"we"
+  [WORD VAL] new best — checkpoint saved (epoch 180)
+[EPOCH 181/200] train_loss=0.4962  val_loss=1.4996  val_letter_acc=0.775  (blank-only predictions: 7%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->r
+[EPOCH 182/200] train_loss=0.4534  val_loss=1.8510  val_letter_acc=0.749  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->h, b->b, c->e, j->j, v->r
+[EPOCH 183/200] train_loss=0.4866  val_loss=1.7518  val_letter_acc=0.737  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->p, b->b, c->c, j->j, v->g
+[EPOCH 184/200] train_loss=0.4823  val_loss=1.7761  val_letter_acc=0.725  (blank-only predictions: 8%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->w, b->b, c->c, j->(blank), v->b
+[EPOCH 185/200] train_loss=0.4723  val_loss=1.9519  val_letter_acc=0.731  (blank-only predictions: 3%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.287  mean_edit_distance=3.10  exact_accuracy=0.275
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prerptron", "these cookies are so amazing"->"hesecooklesarespamuitik", "the dow jones index has risen"->"thediwpnesindeyhasmiser", "deserve"->"aestwi", "me"->"we"
+[EPOCH 186/200] train_loss=0.4973  val_loss=2.0837  val_letter_acc=0.743  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->l
+[EPOCH 187/200] train_loss=0.4625  val_loss=1.6324  val_letter_acc=0.763  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->p, b->b, c->c, j->j, v->b
+[EPOCH 188/200] train_loss=0.5162  val_loss=1.6708  val_letter_acc=0.769  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->p, b->b, c->c, j->j, v->b
+[EPOCH 189/200] train_loss=0.4755  val_loss=1.7805  val_letter_acc=0.766  (blank-only predictions: 0%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->j, b->b, c->c, j->j, v->h
+[EPOCH 190/200] train_loss=0.4753  val_loss=1.8646  val_letter_acc=0.772  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+  [WORD VAL] normalized_edit_distance=0.286  mean_edit_distance=3.08  exact_accuracy=0.315
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescriptron", "these cookies are so amazing"->"thesecoooulesarespcamuisin", "the dow jones index has risen"->"thedawyonesindexhasmisen", "deserve"->"aesciwin", "me"->"me"
+[EPOCH 191/200] train_loss=0.4927  val_loss=1.6090  val_letter_acc=0.769  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 192/200] train_loss=0.4701  val_loss=1.7080  val_letter_acc=0.775  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->s, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 193/200] train_loss=0.4644  val_loss=1.6687  val_letter_acc=0.766  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+[EPOCH 194/200] train_loss=0.4700  val_loss=1.7894  val_letter_acc=0.763  (blank-only predictions: 1%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->g
+[EPOCH 195/200] train_loss=0.4750  val_loss=1.8249  val_letter_acc=0.746  (blank-only predictions: 6%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->o
+  [WORD VAL] normalized_edit_distance=0.307  mean_edit_distance=3.32  exact_accuracy=0.236
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"presriptron", "these cookies are so amazing"->"hesecookiearespamaisil", "the dow jones index has risen"->"thedomsareshdexhasmisen", "deserve"->"anwil", "me"->"me"
+[EPOCH 196/200] train_loss=0.4781  val_loss=1.8750  val_letter_acc=0.725  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->p, b->b, c->c, j->j, v->o
+[EPOCH 197/200] train_loss=0.5111  val_loss=1.8521  val_letter_acc=0.722  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->p, b->b, c->c, j->j, v->r
+[EPOCH 198/200] train_loss=0.4643  val_loss=1.8338  val_letter_acc=0.746  (blank-only predictions: 5%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->(blank), b->b, c->c, j->y, v->r
+[EPOCH 199/200] train_loss=0.4686  val_loss=1.5726  val_letter_acc=0.751  (blank-only predictions: 4%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->p, b->b, c->c, j->j, v->o
+[EPOCH 200/200] train_loss=0.4897  val_loss=1.9310  val_letter_acc=0.754  (blank-only predictions: 2%)                              
+  sample (true -> predicted): j->j, q->q, y->y, o->r, b->b, c->c, j->j, v->b
+  [WORD VAL] normalized_edit_distance=0.338  mean_edit_distance=3.65  exact_accuracy=0.169
+  [WORD VAL] space check: 36/178 val trials actually contain a space; model predicted one in 0/178 — if the first number is >0 and the second stays 0 for many epochs, the space class isn't being learned yet (check --curriculum stage 3 has actually been reached, and how many epochs it's had)
+  [WORD VAL] sample (true -> predicted): "prescription"->"prescrtpttron", "these cookies are so amazing"->"thesecooolesarespamutil", "the dow jones index has risen"->"tmhedowitomesindelhasmisen", "deserve"->"aestwik", "me"->"me"
+[PLOT] training curves saved to checkpoints\letter_ctc_no_space\training_curves.png
+[DONE] best word-level normalized edit distance=0.2711 — saved to checkpoints\letter_ctc_no_space\best_model.pt
+(watchtouch) PS C:\Users\uclah\OneDrive\Documents\ch_kaist2\UCLA_ml_test\ml> python 260821test/evaluate_word_ctc.py --checkpoint checkpoints/letter_ctc_no_space/best_model.pt --participants-root ../dataset --splits-json checkpoints/letter_ctc_no_space/splits.json --include sentences
+usage: evaluate_word_ctc.py [-h] --checkpoint CHECKPOINT [--participants-root PARTICIPANTS_ROOT]
+                            [--participants PARTICIPANTS [PARTICIPANTS ...]] [--word-subfolder WORD_SUBFOLDER]
+                            [--sentence-subfolder SENTENCE_SUBFOLDER] [--include-sentences] [--splits-json SPLITS_JSON]
+                            [--phrase-set-path PHRASE_SET_PATH] [--out-dir OUT_DIR] [--decode {greedy,beam}]
+                            [--beam-width BEAM_WIDTH] [--quiet]
+evaluate_word_ctc.py: error: unrecognized arguments: sentences
+(watchtouch) PS C:\Users\uclah\OneDrive\Documents\ch_kaist2\UCLA_ml_test\ml> python 260821test/evaluate_word_ctc.py --checkpoint checkpoints/letter_ctc_no_space/best_model.pt --participants-root ../dataset --splits-json checkpoints/letter_ctc_no_space/splits.json --include-sentences
+[SETUP] checkpoint: modality=fusion audio_source=watch imu_source=watch classes=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] use_space=False
+[SETUP] decoding: greedy
+[SETUP] no --phrase-set-path given — reporting raw CTC accuracy only
+[SETUP] restricting evaluation to the 178 held-out test trials in checkpoints\letter_ctc_no_space\splits.json (excludes trials this checkpoint was trained/validated on)
+[SETUP] participants: ['p1', 'p10', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9']
+[SETUP]   p1: 41 word trials in ..\dataset\p1\dataset\word, 8 sentence trials in ..\dataset\p1\dataset\sentence
+  [    ][W] p1  "thousand"(8) -> "unoycxhwh"(9)  edit=8  span=8.41s
+  [    ][W] p1  "stimulus"(8) -> "krientws"(8)  edit=6  span=8.01s
+  [    ][W] p1  "jones"(5) -> "nco"(3)  edit=4  span=5.34s
+[SETUP]   p10: 85 word trials in ..\dataset\p10\dataset\word, 28 sentence trials in ..\dataset\p10\dataset\sentence
+  [    ][W] p10  "punishment"(10) -> "bunishment"(10)  edit=1  span=9.78s
+  [    ][W] p10  "swamp"(5) -> "swamb"(5)  edit=1  span=5.52s
+  [    ][W] p10  "excellent"(9) -> "epcellent"(9)  edit=1  span=7.72s
+  [OK  ][W] p10  "burglars"(8) -> "burglars"(8)  edit=0  span=6.65s
+  [    ][W] p10  "sunday"(6) -> "sundy"(5)  edit=1  span=4.56s
+  [    ][W] p10  "tie"(3) -> "tiie"(4)  edit=1  span=2.45s
+  [OK  ][W] p10  "about"(5) -> "about"(5)  edit=0  span=4.63s
+  [OK  ][W] p10  "eat"(3) -> "eat"(3)  edit=0  span=2.98s
+  [OK  ][W] p10  "fish"(4) -> "fish"(4)  edit=0  span=4.04s
+  [    ][W] p10  "soon"(4) -> "soor"(4)  edit=1  span=4.51s
+  [OK  ][W] p10  "seems"(5) -> "seems"(5)  edit=0  span=5.20s
+  [    ][W] p10  "gap"(3) -> "gab"(3)  edit=1  span=3.71s
+  [OK  ][W] p10  "prayer"(6) -> "prayer"(6)  edit=0  span=6.76s
+  [    ][S] p10  "he called seven times"(21) -> "mecallelseventimes"(18)  edit=5  span=14.20s
+  [    ][S] p10  "luckily my wallet was found"(27) -> "lwelkilyanyoalletuosfound"(25)  edit=11  span=18.92s
+  [    ][S] p10  "our life expectancy has increased"(33) -> "surloteebectancyhasincreasel"(28)  edit=10  span=26.92s
+[SETUP]   p2: 125 word trials in ..\dataset\p2\dataset\word, 47 sentence trials in ..\dataset\p2\dataset\sentence
+  [    ][W] p2  "this"(4) -> "tnis"(4)  edit=1  span=2.81s
+  [OK  ][W] p2  "busy"(4) -> "busy"(4)  edit=0  span=2.73s
+  [    ][W] p2  "dipped"(6) -> "qippel"(6)  edit=2  span=3.80s
+  [    ][W] p2  "population"(10) -> "iopuation"(9)  edit=2  span=5.65s
+  [OK  ][W] p2  "blast"(5) -> "blast"(5)  edit=0  span=2.96s
+  [    ][W] p2  "monitored"(9) -> "monlitoredi"(11)  edit=2  span=5.22s
+  [    ][W] p2  "strike"(6) -> "sinilo"(6)  edit=4  span=3.18s
+  [    ][W] p2  "had"(3) -> "nad"(3)  edit=1  span=1.87s
+  [OK  ][W] p2  "man"(3) -> "man"(3)  edit=0  span=2.43s
+  [    ][W] p2  "snake"(5) -> "shal"(4)  edit=3  span=2.88s
+  [    ][W] p2  "labour"(6) -> "baibowr"(7)  edit=3  span=3.28s
+  [OK  ][W] p2  "yes"(3) -> "yes"(3)  edit=0  span=1.53s
+  [OK  ][W] p2  "mission"(7) -> "mission"(7)  edit=0  span=3.37s
+  [OK  ][W] p2  "riding"(6) -> "riding"(6)  edit=0  span=3.32s
+  [OK  ][W] p2  "up"(2) -> "up"(2)  edit=0  span=1.94s
+  [    ][W] p2  "rejection"(9) -> "rjetioy"(7)  edit=3  span=5.14s
+  [OK  ][W] p2  "questioning"(11) -> "questioning"(11)  edit=0  span=8.76s
+  [    ][S] p2  "drugs should be avoided"(23) -> "erugssshouldbeaoidd"(19)  edit=6  span=9.53s
+  [    ][S] p2  "life is but a dream"(19) -> "lifeisbutacdrein"(16)  edit=6  span=7.40s
+  [    ][S] p2  "we run the risk of failure"(26) -> "wemintheniskeoffalure"(21)  edit=9  span=10.13s
+  [    ][S] p2  "a yard is almost as long as a meter"(35) -> "bardisalmisbasyougaseawetai"(27)  edit=17  span=12.53s
+  [    ][S] p2  "drove my chevy to the levee"(27) -> "arovemychevytothelevee"(22)  edit=6  span=11.37s
+  [    ][S] p2  "i agree with you"(16) -> "agreewitbyouy"(13)  edit=6  span=6.48s
+  [    ][S] p2  "everyone wants to win the lottery"(33) -> "ey"(2)  edit=31  span=3.18s
+[SETUP]   p3: 126 word trials in ..\dataset\p3\dataset\word, 38 sentence trials in ..\dataset\p3\dataset\sentence
+  [OK  ][W] p3  "sure"(4) -> "sure"(4)  edit=0  span=2.36s
+  [    ][W] p3  "guidelines"(10) -> "guiidelineces"(13)  edit=3  span=6.29s
+  [    ][W] p3  "hair"(4) -> "haiw"(4)  edit=1  span=2.41s
+  [OK  ][W] p3  "down"(4) -> "down"(4)  edit=0  span=2.79s
+  [    ][W] p3  "psychology"(10) -> "ppsyjcholoey"(12)  edit=3  span=5.67s
+  [    ][W] p3  "avoided"(7) -> "ovoided"(7)  edit=1  span=4.21s
+  [OK  ][W] p3  "those"(5) -> "those"(5)  edit=0  span=3.36s
+  [    ][W] p3  "when"(4) -> "wheu"(4)  edit=1  span=2.66s
+  [OK  ][W] p3  "priorities"(10) -> "priorities"(10)  edit=0  span=5.15s
+  [OK  ][W] p3  "between"(7) -> "between"(7)  edit=0  span=4.37s
+  [    ][W] p3  "music"(5) -> "usic"(4)  edit=1  span=1.98s
+  [    ][W] p3  "ate"(3) -> "aite"(4)  edit=1  span=2.09s
+  [    ][W] p3  "up"(2) -> "op"(2)  edit=1  span=1.36s
+  [    ][W] p3  "garbage"(7) -> "carbage"(7)  edit=1  span=4.73s
+  [    ][S] p3  "the quick brown fox jumped"(26) -> "theouickboowhfoughmped"(22)  edit=10  span=15.10s
+  [    ][S] p3  "i took the rover from the shop"(30) -> "litoostheroverfoootheshop"(25)  edit=10  span=14.77s
+  [    ][S] p3  "gamblers eventually loose their shirts"(38) -> "gainibkersocventaayllyloosethenshirits"(38)  edit=14  span=18.54s
+  [    ][S] p3  "this mission statement is baloney"(33) -> "thismissiconstatcmentisbalomeg"(30)  edit=8  span=17.79s
+  [    ][S] p3  "he watched in astonishment"(26) -> "hewatchedinastorishient"(23)  edit=5  span=14.20s
+[SETUP]   p4: 84 word trials in ..\dataset\p4\dataset\word, 30 sentence trials in ..\dataset\p4\dataset\sentence
+  [OK  ][W] p4  "facts"(5) -> "facts"(5)  edit=0  span=4.79s
+  [OK  ][W] p4  "your"(4) -> "your"(4)  edit=0  span=3.94s
+  [OK  ][W] p4  "aspirations"(11) -> "aspirations"(11)  edit=0  span=10.23s
+  [OK  ][W] p4  "join"(4) -> "join"(4)  edit=0  span=3.97s
+  [    ][W] p4  "evening"(7) -> "eveniing"(8)  edit=1  span=6.84s
+  [    ][W] p4  "information"(11) -> "iinformation"(12)  edit=1  span=10.79s
+  [    ][W] p4  "seasoned"(8) -> "easonel"(7)  edit=2  span=7.17s
+  [OK  ][W] p4  "pay"(3) -> "pay"(3)  edit=0  span=3.28s
+  [OK  ][W] p4  "honest"(6) -> "honest"(6)  edit=0  span=6.02s
+  [    ][W] p4  "hand"(4) -> "nehc"(4)  edit=4  span=4.48s
+  [    ][W] p4  "those"(5) -> "shcse"(5)  edit=2  span=4.79s
+  [    ][S] p4  "get your priorities in order"(28) -> "getyourprioritiesinoreer"(24)  edit=5  span=21.74s
+  [    ][S] p4  "the food at this restaurant"(27) -> "thetoodatthisrestaurant"(23)  edit=5  span=21.15s
+  [    ][S] p4  "i agree with you"(16) -> "iidgreewithyou"(14)  edit=4  span=12.50s
+  [    ][S] p4  "knee bone is connected to the thigh bone"(40) -> "eoreniscommecteatothetnisgmbome"(31)  edit=19  span=31.93s
+  [    ][S] p4  "where can my little dog be"(26) -> "wherecarmmylittledogbe"(22)  edit=6  span=20.09s
+  [    ][S] p4  "weeping willows are found near water"(36) -> "repingwilousaretounanearwater"(29)  edit=11  span=30.59s
+  [    ][S] p4  "the world is a stage"(20) -> "tneworlalisastace"(17)  edit=7  span=15.76s
+  [    ][S] p4  "what you see is what you get"(28) -> "whatyouseeishnatyouget"(22)  edit=8  span=22.04s
+  [    ][S] p4  "want to join us for lunch"(25) -> "wanttoocoihusforluncm"(21)  edit=8  span=18.27s
+  [    ][S] p4  "hands on experience with a job"(30) -> "manasonetpertencewithasiop"(26)  edit=11  span=23.77s
+[SETUP]   p5: 75 word trials in ..\dataset\p5\dataset\word, 26 sentence trials in ..\dataset\p5\dataset\sentence
+  [    ][W] p5  "tests"(5) -> "nleksck"(7)  edit=5  span=5.89s
+  [    ][W] p5  "location"(8) -> "locattikg"(9)  edit=3  span=10.08s
+  [    ][W] p5  "surgery"(7) -> "usurgeti"(8)  edit=3  span=8.70s
+  [    ][W] p5  "around"(6) -> "udrod"(5)  edit=4  span=7.33s
+  [    ][W] p5  "benign"(6) -> "peni"(4)  edit=3  span=6.85s
+  [    ][W] p5  "underwent"(9) -> "wnderwet"(8)  edit=2  span=10.73s
+  [    ][W] p5  "getting"(7) -> "getti"(5)  edit=2  span=7.83s
+  [    ][W] p5  "meter"(5) -> "metht"(5)  edit=2  span=5.93s
+  [    ][W] p5  "fast"(4) -> "cfak"(4)  edit=3  span=5.82s
+  [    ][W] p5  "winner"(6) -> "winno"(5)  edit=2  span=6.94s
+  [    ][W] p5  "weekend"(7) -> "weekep"(6)  edit=2  span=8.47s
+  [    ][S] p5  "hair gel is very greasy"(23) -> "mairgelisverygrea"(17)  edit=7  span=18.58s
+  [    ][S] p5  "one heck of a question"(22) -> "oneheckofdoruesti"(17)  edit=8  span=17.55s
+  [    ][S] p5  "the store will close at ten"(27) -> "ihestorewillclosecatt"(21)  edit=8  span=22.38s
+  [    ][S] p5  "dashing through the snow"(24) -> "dashingthroagghthesho"(21)  edit=7  span=25.75s
+[SETUP]   p6: 105 word trials in ..\dataset\p6\dataset\word, 33 sentence trials in ..\dataset\p6\dataset\sentence
+  [    ][W] p6  "reading"(7) -> "roeadingy"(9)  edit=2  span=4.22s
+  [    ][W] p6  "futile"(6) -> "fqltile"(7)  edit=2  span=3.21s
+  [    ][W] p6  "never"(5) -> "hewer"(5)  edit=2  span=2.66s
+  [OK  ][W] p6  "lunch"(5) -> "lunch"(5)  edit=0  span=2.40s
+  [OK  ][W] p6  "sides"(5) -> "sides"(5)  edit=0  span=3.19s
+  [    ][W] p6  "balance"(7) -> "balan"(5)  edit=2  span=4.19s
+  [    ][W] p6  "popularity"(10) -> "foopalannly"(11)  edit=6  span=7.95s
+  [OK  ][W] p6  "east"(4) -> "east"(4)  edit=0  span=2.81s
+  [    ][W] p6  "never"(5) -> "lecyen"(6)  edit=4  span=3.01s
+  [    ][W] p6  "ides"(4) -> "idecs"(5)  edit=1  span=4.35s
+  [    ][W] p6  "express"(7) -> "expness"(7)  edit=1  span=5.70s
+  [    ][W] p6  "tell"(4) -> "tely"(4)  edit=1  span=2.92s
+  [    ][W] p6  "construction"(12) -> "constractioh"(12)  edit=2  span=8.08s
+  [OK  ][W] p6  "maternity"(9) -> "maternity"(9)  edit=0  span=7.10s
+  [    ][W] p6  "cat"(3) -> "cct"(3)  edit=1  span=2.23s
+  [    ][W] p6  "deserves"(8) -> "qdeserves"(9)  edit=1  span=5.46s
+  [    ][W] p6  "details"(7) -> "aetclis"(7)  edit=4  span=5.35s
+  [OK  ][W] p6  "force"(5) -> "force"(5)  edit=0  span=3.82s
+  [    ][S] p6  "a duck quacks to ask for food"(29) -> "aqdualdxestii"(13)  edit=24  span=7.26s
+  [    ][S] p6  "my preferred treat is chocolate"(31) -> "huisimnecneethdiscdelate"(24)  edit=21  span=12.25s
+  [    ][S] p6  "one heck of a question"(22) -> "omeeksotoqefiin"(15)  edit=13  span=9.89s
+  [    ][S] p6  "information super highway"(25) -> "ingforuatisuuerhighwaly"(23)  edit=8  span=13.24s
+  [    ][S] p6  "i like baroque and classical music"(34) -> "ltylkebarooueanddyassicayasic"(29)  edit=14  span=20.09s
+  [    ][S] p6  "the rationale behind the decision"(33) -> "therationakehisihmaltheteoproon"(31)  edit=16  span=20.64s
+  [    ][S] p6  "i skimmed through your proposal"(31) -> "tskimsodtthiiogyouriprobosal"(28)  edit=12  span=19.25s
+  [    ][S] p6  "healthy food is good for you"(28) -> "fitteathoytoodrsgoooforyow"(26)  edit=15  span=17.95s
+[SETUP]   p7: 69 word trials in ..\dataset\p7\dataset\word, 25 sentence trials in ..\dataset\p7\dataset\sentence
+  [    ][W] p7  "immediately"(11) -> "immekiately"(11)  edit=1  span=14.42s
+  [OK  ][W] p7  "while"(5) -> "while"(5)  edit=0  span=6.79s
+  [OK  ][W] p7  "scene"(5) -> "scene"(5)  edit=0  span=6.43s
+  [    ][W] p7  "snake"(5) -> "shake"(5)  edit=1  span=7.20s
+  [    ][W] p7  "exasperation"(12) -> "exlasperattiion"(15)  edit=3  span=15.22s
+  [    ][W] p7  "boys"(4) -> "pox"(3)  edit=3  span=5.14s
+  [    ][W] p7  "confidential"(12) -> "iy"(2)  edit=11  span=2.00s
+  [    ][W] p7  "voice"(5) -> "pice"(4)  edit=2  span=6.14s
+  [    ][W] p7  "little"(6) -> "iltle"(5)  edit=2  span=7.25s
+  [OK  ][W] p7  "up"(2) -> "up"(2)  edit=0  span=2.59s
+  [    ][W] p7  "bite"(4) -> "pile"(4)  edit=2  span=5.43s
+  [    ][S] p7  "nobody cares anymore"(20) -> "nabakycuresanymore"(18)  edit=6  span=23.44s
+  [    ][S] p7  "the fax machine is broken"(25) -> "thetaxmachineisbrokem"(21)  edit=6  span=27.15s
+  [    ][S] p7  "a duck quacks to ask for food"(29) -> "ulucksquacksthasktorfok"(23)  edit=12  span=21.35s
+  [    ][S] p7  "the cotton is high"(18) -> "thnecottohishigh"(16)  edit=5  span=19.64s
+  [    ][S] p7  "learn to walk before you run"(28) -> "harntowalkbeforeyouran"(22)  edit=8  span=27.74s
+[SETUP]   p8: 88 word trials in ..\dataset\p8\dataset\word, 33 sentence trials in ..\dataset\p8\dataset\sentence
+  [OK  ][W] p8  "movie"(5) -> "movie"(5)  edit=0  span=3.99s
+  [OK  ][W] p8  "boss"(4) -> "boss"(4)  edit=0  span=3.15s
+  [OK  ][W] p8  "faster"(6) -> "faster"(6)  edit=0  span=4.99s
+  [OK  ][W] p8  "chancellor"(10) -> "chancellor"(10)  edit=0  span=7.74s
+  [    ][W] p8  "schools"(7) -> "schoclls"(8)  edit=2  span=5.33s
+  [OK  ][W] p8  "judges"(6) -> "judges"(6)  edit=0  span=5.35s
+  [OK  ][W] p8  "presence"(8) -> "presence"(8)  edit=0  span=6.86s
+  [    ][W] p8  "custody"(7) -> "cyustody"(8)  edit=1  span=6.26s
+  [OK  ][W] p8  "assault"(7) -> "assault"(7)  edit=0  span=7.09s
+  [OK  ][W] p8  "thoroughly"(10) -> "thoroughly"(10)  edit=0  span=9.17s
+  [    ][W] p8  "eight"(5) -> "eignt"(5)  edit=1  span=5.02s
+  [OK  ][W] p8  "biggest"(7) -> "biggest"(7)  edit=0  span=7.34s
+  [    ][W] p8  "tumor"(5) -> "fumor"(5)  edit=1  span=5.19s
+  [    ][S] p8  "drugs should be avoided"(23) -> "drugsshouldbeavosided"(21)  edit=4  span=16.97s
+  [    ][S] p8  "good jobs for those with education"(34) -> "gooodiobsforrthosewitheducatnon"(31)  edit=8  span=26.32s
+  [    ][S] p8  "limited warranty of two years"(29) -> "limtitedwarrantyottwoyears"(26)  edit=6  span=24.06s
+  [    ][S] p8  "great disturbance in the force"(30) -> "greatdisturbanceintheforce"(26)  edit=4  span=24.39s
+[SETUP]   p9: 94 word trials in ..\dataset\p9\dataset\word, 30 sentence trials in ..\dataset\p9\dataset\sentence
+  [    ][W] p9  "appears"(7) -> "eppear"(6)  edit=2  span=6.82s
+  [    ][W] p9  "person"(6) -> "persor"(6)  edit=1  span=5.19s
+  [    ][W] p9  "hamburger"(9) -> "vmburyer"(8)  edit=3  span=8.74s
+  [    ][W] p9  "population"(10) -> "opuletior"(9)  edit=3  span=7.48s
+  [OK  ][W] p9  "sample"(6) -> "sample"(6)  edit=0  span=5.49s
+  [    ][W] p9  "still"(5) -> "stil"(4)  edit=1  span=4.06s
+  [OK  ][W] p9  "coalition"(9) -> "coalition"(9)  edit=0  span=7.64s
+  [OK  ][W] p9  "try"(3) -> "try"(3)  edit=0  span=2.55s
+  [OK  ][W] p9  "microscopes"(11) -> "microscopes"(11)  edit=0  span=8.42s
+  [    ][W] p9  "sick"(4) -> "stck"(4)  edit=1  span=3.69s
+  [    ][W] p9  "forward"(7) -> "forwand"(7)  edit=1  span=5.84s
+  [OK  ][W] p9  "delivery"(8) -> "delivery"(8)  edit=0  span=6.12s
+  [OK  ][W] p9  "together"(8) -> "together"(8)  edit=0  span=6.41s
+  [    ][W] p9  "ridiculous"(10) -> "ridicwlous"(10)  edit=1  span=7.43s
+  [    ][S] p9  "the plug does not fit the socket"(32) -> "tmeplwagdoesmhotfitthesocket"(28)  edit=10  span=22.52s
+  [    ][S] p9  "my dog sheds his hair"(21) -> "mydoyshedshishain"(17)  edit=6  span=20.16s
+  [    ][S] p9  "please provide your date of birth"(33) -> "ylleaseprovideyoaadateofbirth"(29)  edit=9  span=22.99s
+  [    ][S] p9  "it should be sunny tomorrow"(27) -> "itishouldbesuunytomonnow"(24)  edit=7  span=21.12s
+  [    ][S] p9  "beautiful paintings in the gallery"(34) -> "beacattlpaiontiiiigicinthegacdery"(33)  edit=16  span=23.31s
+  [    ][S] p9  "public transit is much faster"(29) -> "bublictransitismuthaseer"(24)  edit=8  span=18.94s
+  [    ][S] p9  "a security force of eight thousand"(34) -> "asecurittyforceofightthoasand"(29)  edit=8  span=22.88s
+
+[RESULT] 178 trials evaluated across 10 participants (125 word, 53 sentence)
+
+[RESULT] === WORD trials (125) ===
+[RESULT] raw CTC exact-match accuracy:       0.384
+[RESULT] raw CTC mean edit distance:         1.38 characters
+[RESULT] blank-only predictions:             0/125 (0%) — i.e. the model output nothing at all for these
+[RESULT] true text length:  mean=6.3  min=2  max=12
+[RESULT] predicted length:  mean=6.2  min=2  max=15
+[RESULT] per-participant raw CTC accuracy:
+participant
+p1     0.000000
+p10    0.461538
+p2     0.470588
+p3     0.357143
+p4     0.545455
+p5     0.000000
+p6     0.277778
+p7     0.272727
+p8     0.692308
+p9     0.428571
+
+[RESULT] === SENTENCE trials (53) ===
+[RESULT] raw CTC exact-match accuracy:       0.000
+[RESULT] raw CTC mean edit distance:         9.70 characters
+[RESULT] blank-only predictions:             0/53 (0%) — i.e. the model output nothing at all for these
+[RESULT] true text length:  mean=27.6  min=16  max=40
+[RESULT] predicted length:  mean=22.8  min=2  max=38
+[RESULT] per-participant raw CTC accuracy:
+participant
+p10    0.0
+p2     0.0
+p3     0.0
+p4     0.0
+p5     0.0
+p6     0.0
+p7     0.0
+p8     0.0
+p9     0.0
+
+[DATA] word_ctc_eval/word_ctc_results.csv
+(watchtouch) PS C:\Users\uclah\OneDrive\Documents\ch_kaist2\UCLA_ml_test\ml> 

@@ -1,0 +1,13 @@
+{
+  "modality": "fusion",
+  "audio_source": "watch",
+  "imu_source": "watch",
+  "sequence_encoder": "gru",
+  "rnn_hidden": 256,
+  "use_space": false,
+  "motion_loss_weight": 0.3,
+  "spec_loss_weight": 0.2,
+  "curriculum": true,
+  "sentence_weight": 5.0,
+  "synthetic_per_epoch": 3000
+}
