@@ -1,0 +1,14 @@
+# A: GRU (기본값)
+python 260806test_ctc/train_ctc.py \
+    --participants-root ../dataset --classes a b c ... z \
+    --modality fusion --audio-source watch --imu-source watch \
+    --epochs 200 --synthetic-per-epoch 3000 --concat-letters-min 2 --concat-letters-max 12 \
+    --use-word-trials --use-sentence-trials --sentence-weight 5.0 \
+    --curriculum --curriculum-stage1-steps 5000 --curriculum-stage2-steps 5000 \
+    --motion-loss-weight 0.3 --spec-loss-weight 0.2 \
+    --out-dir checkpoints/letter_ctc_gru
+
+# B: Transformer 
+python 260822test/train_ctc.py --participants-root ../dataset --classes a b c d e f g h i j k l m n o p q r s t u v w x y z --modality fusion --audio-source watch --imu-source watch --epochs 200 --synthetic-per-epoch 3000 --concat-letters-min 2 --concat-letters-max 12 --use-word-trials --use-sentence-trials --sentence-weight 5.0 --curriculum --curriculum-stage1-steps 5000 --curriculum-stage2-steps 5000 --motion-loss-weight 0.3 --spec-loss-weight 0.2 --sequence-encoder transformer --transformer-layers 2 --transformer-nhead 8 --out-dir checkpoints/letter_ctc_transformer --no-space
+
+python 260822test/evaluate_word_ctc.py --checkpoint checkpoints/letter_ctc_transformer/best_model.pt --participants-root ../dataset --splits-json checkpoints/letter_ctc_with_space/splits.json --include-sentences
