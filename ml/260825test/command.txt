@@ -1,0 +1,12 @@
+
+gru - train
+python 260824test_real/train_ctc.py --participants-root ../dataset --classes a b c d e f g h i j k l m n o p q r s t u v w x y z --modality fusion --audio-source watch --imu-source watch --epochs 200 --synthetic-per-epoch 3000 --concat-letters-min 2 --concat-letters-max 12 --use-word-trials --use-sentence-trials --sentence-weight 5.0 --curriculum --curriculum-stage1-steps 5000 --curriculum-stage2-steps 5000 --motion-loss-weight 0.3 --spec-loss-weight 0.2 --no-space --out-dir checkpoints/ctc_gru_nospace
+
+transformer-train
+python 260824test_real/train_ctc.py --participants-root ../dataset --classes a b c d e f g h i j k l m n o p q r s t u v w x y z --modality fusion --audio-source watch --imu-source watch --epochs 200 --synthetic-per-epoch 3000 --concat-letters-min 2 --concat-letters-max 12 --use-word-trials --use-sentence-trials --sentence-weight 5.0 --curriculum --curriculum-stage1-steps 5000 --curriculum-stage2-steps 5000 --motion-loss-weight 0.3 --spec-loss-weight 0.2 --sequence-encoder transformer --transformer-layers 2 --transformer-nhead 8 --no-space --out-dir checkpoints/ctc_transformer_nospace
+
+gru-evaluate
+python 260824test_real/evaluate_word_ctc.py --checkpoint checkpoints/ctc_gru_nospace/best_model.pt --participants-root ../dataset --splits-json checkpoints/ctc_gru/splits.json --include-sentences
+
+transformer-evaluate
+python 260822test/evaluate_word_ctc.py --checkpoint checkpoints/ctc_transformer_nospace/best_model.pt --participants-root ../dataset --splits-json checkpoints/ctc_transformer/splits.json --include-sentences
