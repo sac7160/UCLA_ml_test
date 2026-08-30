@@ -1,0 +1,2 @@
+
+python 260829test/train_leave_one_out.py --participants-root ../dataset --out-dir checkpoints/gru_lopo --classes a b c d e f g h i j k l m n o p q r s t u v w x y z --modality fusion --audio-source watch --imu-source watch --epochs 100 --synthetic-per-epoch 3000 --concat-letters-min 2 --concat-letters-max 12 --use-word-trials --use-sentence-trials --sentence-weight 5.0 --curriculum --curriculum-stage1-steps 5000 --curriculum-stage2-steps 5000 --motion-loss-weight 0.0 --spec-loss-weight 0.2 --include-sentences --held-out-participants p1 p2 p3

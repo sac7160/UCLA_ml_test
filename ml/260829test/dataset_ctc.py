@@ -103,6 +103,59 @@ def load_audio_variable(trial_dir: Path, audio_source: str,
     return mel   # (1, N_MELS, T) — T left as whatever the mel transform naturally produced
 
 
+def _unbatch_timestamps(t: np.ndarray) -> np.ndarray:
+    """Fixes a known watch-IMU transmission quirk: sensor readings arrive
+    in BATCHES — several consecutive samples sharing the EXACT SAME
+    recorded timestamp, transmitted together roughly every ~200ms (5Hz)
+    for Bluetooth communication stability — even though the underlying
+    physical accelerometer/gyroscope itself samples much faster within
+    that interval (this project's own watch imu.csv shows ~20 samples
+    per ~200ms batch, i.e. a true sensor rate close to 100Hz, batched
+    into 5Hz-spaced transmission timestamps).
+
+    Naively resampling against these collapsed-together timestamps
+    confuses linear interpolation (_resample_to_rate below) into
+    treating an entire ~200ms of real motion as a single instant — the
+    opposite of what a higher target resample rate is supposed to
+    capture, and exactly why simply raising IMU_RESAMPLE_HZ without this
+    fix could make results WORSE, not better (more output steps get
+    interpolated from the same collapsed handful of true timestamps,
+    manufacturing detail that was never really there).
+
+    This spreads each batch's samples evenly across the interval up to
+    the NEXT batch's timestamp, reconstructing plausible individual
+    sample times — turning the (mostly meaningless, since we don't know
+    the sensor's exact intra-batch timing) raw timestamps into a
+    monotonically increasing sequence that resampling can treat as the
+    continuously-varying signal it actually is. A no-op (returns t
+    unchanged) when there's no batching to begin with (e.g. fingertip
+    IMU, which comes from per-frame camera tracking, not a batched
+    Bluetooth transmission, and already has one distinct timestamp per
+    sample)."""
+    unique_times, first_idx, counts = np.unique(t, return_index=True, return_counts=True)
+    if np.all(counts == 1):
+        return t   # nothing batched — already one distinct timestamp per sample
+    order = np.argsort(first_idx)
+    unique_times = unique_times[order]
+    first_idx = first_idx[order]
+    counts = counts[order]
+
+    t_fixed = t.astype(np.float64).copy()
+    for i in range(len(unique_times)):
+        start = first_idx[i]
+        n = int(counts[i])
+        if i + 1 < len(unique_times):
+            interval = unique_times[i + 1] - unique_times[i]
+        else:
+            # last batch — no "next" timestamp to interpolate toward, so
+            # reuse the previous inter-batch interval as the best
+            # available estimate of this batch's own span
+            interval = unique_times[i] - unique_times[i - 1] if i > 0 else 0.0
+        offsets = (np.arange(n) / max(n, 1)) * interval
+        t_fixed[start:start + n] = unique_times[i] + offsets
+    return t_fixed
+
+
 def _resample_to_rate(t: np.ndarray, values: np.ndarray, target_hz: float, max_steps: int) -> np.ndarray:
     """Same linear-interpolation idea as dataset.py's
     _resample_to_fixed_steps, but the OUTPUT step count is derived from
@@ -110,7 +163,7 @@ def _resample_to_rate(t: np.ndarray, values: np.ndarray, target_hz: float, max_s
     trial twice as long gets roughly twice as many steps (capped at
     max_steps as a safety ceiling, see config_ctc.IMU_MAX_STEPS_CAP)."""
     order = np.argsort(t)
-    t_sorted = t[order]
+    t_sorted = _unbatch_timestamps(t[order])
     values_sorted = values[order]
     duration = max(t_sorted[-1] - t_sorted[0], 1e-3)
     n_steps = max(2, min(int(round(duration * target_hz)), max_steps))
@@ -186,8 +239,8 @@ def _denoise_fingertip_signal(values: np.ndarray) -> np.ndarray:
         return values   # too short for either filter to do anything meaningful — matches
                           # _smooth()'s own short-trial no-op behavior
 
-    # Stage 1: median filter — kernel size must be odd; 5 samples (~125ms
-    # at IMU_RESAMPLE_HZ=40Hz) is short enough to only catch brief
+    # Stage 1: median filter — kernel size must be odd; 5 samples (~50ms
+    # at IMU_RESAMPLE_HZ=100Hz) is short enough to only catch brief
     # spikes, not blur out real, slightly-longer motion features.
     median_kernel = min(5, T if T % 2 == 1 else T - 1)
     if median_kernel >= 3:
