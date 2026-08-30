@@ -52,7 +52,21 @@ from pathlib import Path
 
 import pandas as pd
 
+# This file lives in the CTC subfolder (e.g. 260829test/), alongside
+# dataset_ctc.py/evaluate_word_ctc.py — but this file itself does
+# `from dataset_ctc import ...` below, and dataset_ctc.py in turn does
+# `import config_ctc`, which does `import config` (the ORIGINAL,
+# unprefixed config.py that lives one level up, in ml/ itself). Python
+# only auto-adds THIS script's own directory to sys.path, never its
+# parent, so without inserting the grandparent directory too, that
+# import chain fails with "No module named 'config'" the moment this
+# script is run from anywhere other than exactly the right cwd — the
+# same fix train_ctc.py itself applies to its own sys.path, needed here
+# too since this file imports dataset_ctc directly (not just via
+# subprocess-invoking train_ctc.py, which fixes its own sys.path
+# independently once it starts).
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from dataset_ctc import discover_participant_dataset_dirs
 from evaluate_word_ctc import run_evaluation, _cer, _wer
