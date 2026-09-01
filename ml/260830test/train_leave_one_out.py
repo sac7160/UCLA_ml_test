@@ -1,4 +1,5 @@
 """
+260831 저장방식 수정함
 train_leave_one_out.py
 ────────────────────────────────────────────────────────────────────────────
 Leave-One-Participant-Out (LOPO) cross-user evaluation — trains N separate
@@ -92,6 +93,31 @@ def _summarize(df: pd.DataFrame, target: str, has_dictionary: bool) -> dict:
         out[f'{target}_corrected_cer'] = round(_cer(sub, 'dict_snapped_pred', 'dict_edit_distance'), 3)
         out[f'{target}_corrected_wer'] = round(_wer(sub, 'dict_snapped_pred'), 3)
     return out
+
+
+def _write_summary_and_aggregate(summary_rows: list, out_dir: Path):
+    """Builds and saves lopo_summary.csv (one row per fold completed SO
+    FAR) and lopo_aggregate.csv (mean ± std across those folds), then
+    returns both as DataFrames for the caller to print. Called after
+    EVERY fold (not just once at the very end) so an interrupted run
+    still leaves a usable, up-to-date summary behind — see the call
+    site's own comment for why this matters for a long-running,
+    multi-fold operation like LOPO."""
+    summary = pd.DataFrame(summary_rows).set_index('held_out_participant')
+    out_dir.mkdir(parents=True, exist_ok=True)
+    summary.to_csv(out_dir / 'lopo_summary.csv')
+
+    # The headline "does this generalize to a new user" number — mean and
+    # spread (std) across folds. A LARGE std here (relative to the mean)
+    # is itself an important finding: it means generalization quality
+    # depends heavily on WHICH user is held out, not just the sensing
+    # modality/architecture choices. With only 1 fold done so far, std
+    # is undefined (NaN) — expected, not a bug; it fills in as more
+    # folds complete.
+    numeric_cols = summary.select_dtypes(include='number').columns
+    agg = summary[numeric_cols].agg(['mean', 'std'])
+    agg.to_csv(out_dir / 'lopo_aggregate.csv')
+    return summary, agg
 
 
 def main():
@@ -192,29 +218,26 @@ def main():
               f'word_raw_accuracy={row.get("word_raw_accuracy", float("nan"))}, '
               f'word_raw_cer={row.get("word_raw_cer", float("nan"))}')
 
+        # Re-written after EVERY fold, not just once at the very end —
+        # LOPO is a long-running, multi-hour (or multi-day) operation
+        # split across N full training runs; if the process is
+        # interrupted (crash, forced reboot — see this project's own
+        # earlier system-stability issues) partway through, whatever
+        # folds DID finish should still leave a usable summary/aggregate
+        # behind, not nothing. Cheap to redo each time (a few KB of CSV).
+        _write_summary_and_aggregate(summary_rows, args.out_dir)
+
     if not summary_rows:
         raise RuntimeError('no fold completed successfully — nothing to summarize')
 
-    summary = pd.DataFrame(summary_rows).set_index('held_out_participant')
-    args.out_dir.mkdir(parents=True, exist_ok=True)
-    summary.to_csv(args.out_dir / 'lopo_summary.csv')
-
+    summary, agg = _write_summary_and_aggregate(summary_rows, args.out_dir)
     print(f'\n\n{"#" * 70}\n[RESULT] Leave-One-Participant-Out summary across {len(summary)} fold(s)'
           f'\n{"#" * 70}\n')
     with pd.option_context('display.max_columns', None, 'display.width', 200):
         print(summary.to_string())
-
-    # The headline "does this generalize to a new user" number — mean and
-    # spread (std) across folds. A LARGE std here (relative to the mean)
-    # is itself an important finding: it means generalization quality
-    # depends heavily on WHICH user is held out, not just the sensing
-    # modality/architecture choices.
-    numeric_cols = summary.select_dtypes(include='number').columns
-    agg = summary[numeric_cols].agg(['mean', 'std'])
     print('\n[RESULT] aggregate across folds (mean ± std — this is the cross-user generalization number):')
     with pd.option_context('display.max_columns', None, 'display.width', 200):
         print(agg.to_string())
-    agg.to_csv(args.out_dir / 'lopo_aggregate.csv')
     print(f'\n[DATA] {args.out_dir}/lopo_summary.csv  (per-fold)')
     print(f'[DATA] {args.out_dir}/lopo_aggregate.csv  (mean ± std across folds)')
 

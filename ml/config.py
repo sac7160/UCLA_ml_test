@@ -8,11 +8,16 @@ correctly against a model built under the new ones (shapes won't match).
 """
 
 # ─── Audio input (see dataset.py's DigitStrokeDataset._load_audio) ───────────
-AUDIO_TARGET_SR = 16000
+# AUDIO_TARGET_SR = 16000
+# AUDIO_MAX_SEC   = 2.5
+# N_MELS          = 64
+# N_FFT           = 1024
+# HOP_LENGTH      = 256
+AUDIO_TARGET_SR = 48000#16000
 AUDIO_MAX_SEC   = 2.5
 N_MELS          = 64
-N_FFT           = 1024
-HOP_LENGTH      = 256
+N_FFT           = int(1024 * AUDIO_TARGET_SR / 16000) #1024
+HOP_LENGTH      = int(256 * AUDIO_TARGET_SR / 16000)#256
 
 # Which wav file counts as "the audio" for a trial — chosen via --audio-source.
 AUDIO_FILENAMES = {
