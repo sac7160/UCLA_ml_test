@@ -245,8 +245,14 @@ def build_arg_parser():
     parser.add_argument('--ctc-attention-lambda', type=float, default=0.8,
                          help='paper\'s own Eq. 11 weighting: L_word = (1-lambda)*L_attention + '
                               'lambda*L_CTC. Paper\'s own tuned value is 0.8.')
-    parser.add_argument('--train-frac', type=float, default=0.8)
-    parser.add_argument('--val-frac', type=float, default=0.2)
+    parser.add_argument('--train-frac', type=float, default=0.7)
+    parser.add_argument('--val-frac', type=float, default=0.15)
+    parser.add_argument('--test-frac', type=float, default=0.15,
+                         help='held out and NEVER touched during training (not used for gradient '
+                              'updates, not used to pick the best checkpoint) — saved to splits.json '
+                              'so evaluate_writeas.py can later evaluate on genuinely unseen trials. '
+                              'This is what makes --val-frac different from this: val trials ARE used '
+                              'during training, just for checkpoint selection rather than gradients.')
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--augment', action='store_true',
                          help='enables time_warp/segment_warp/rotation_injection (see '
@@ -290,17 +296,44 @@ def main():
         raise RuntimeError('no usable word/sentence trials found')
 
     random.Random(args.seed).shuffle(samples)
+    n_test = max(1, int(len(samples) * args.test_frac))
     n_val = max(1, int(len(samples) * args.val_frac))
-    val_samples = samples[:n_val]
-    train_samples = samples[n_val:]
-    val_dirs = {trial_dir for trial_dir, _ in val_samples}   # excluded below so
-                                                                # WriteASConcatDataset never
-                                                                # draws a held-out val trial into
-                                                                # a synthetic TRAINING example
+    test_samples = samples[:n_test]
+    val_samples = samples[n_test:n_test + n_val]
+    train_samples = samples[n_test + n_val:]
+    # test_samples is NEVER passed to anything below this line — no
+    # DataLoader, no WriteASConcatDataset pool — see this file's own
+    # --test-frac help text for why that separation matters.
+    excluded_dirs = {trial_dir for trial_dir, _ in val_samples + test_samples}   # both val AND
+                                                                                    # test excluded
+                                                                                    # from the
+                                                                                    # word-concat pool
+                                                                                    # below — a
+                                                                                    # synthetic
+                                                                                    # training example
+                                                                                    # built from a
+                                                                                    # held-out trial
+                                                                                    # would leak it
+                                                                                    # into training
     train_samples_by_participant = {
-        p: [(d, t) for d, t in s if d not in val_dirs] for p, s in samples_by_participant.items()
+        p: [(d, t) for d, t in s if d not in excluded_dirs] for p, s in samples_by_participant.items()
     }
-    print(f'[SETUP] {len(train_samples)} train / {len(val_samples)} val trials')
+    print(f'[SETUP] {len(train_samples)} train / {len(val_samples)} val / {len(test_samples)} test trials')
+
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    splits_path = args.out_dir / 'splits.json'
+    with open(splits_path, 'w') as f:
+        json.dump({
+            'text_splits': {
+                'train': [[str(d), t] for d, t in train_samples],
+                'val': [[str(d), t] for d, t in val_samples],
+                'test': [[str(d), t] for d, t in test_samples],
+            },
+            'classes': args.classes, 'imu_source': args.imu_source, 'finger': args.finger,
+            'seed': args.seed,
+        }, f, indent=2)
+    print(f'[SETUP] saved {splits_path} — evaluate_writeas.py\'s own --splits-json reads this same '
+          f'"text_splits" shape, so the test set stays consistent between training and later evaluation')
 
     n_classes = len(args.classes)
     bos_idx, eos_idx = n_classes, n_classes + 1
