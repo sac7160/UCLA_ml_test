@@ -3,24 +3,36 @@ train_writeas.py
 ────────────────────────────────────────────────────────────────────────────
 Trains model_writeas.WriteASModel (see that file's own docstring) as a
 baseline to compare against this project's own CTC architecture — same
-data, same word-level task, different model.
+data, same task, different model.
+
+Trains on ALL THREE of this project's own trial types together — letter,
+word, AND sentence — not word-only: this project's own word-only trial
+count turned out too small on its own for this model to learn anything
+useful (see the chat this was changed in: raw word-only training gave
+~96% CTC CER). Letter trials (dataset/<participant>/dataset/<class>/
+trial_XXX/, scanned via dataset.scan_dataset — the SAME original,
+unmodified function train_ctc.py itself uses) are converted into
+single-character "text" samples and pooled together with word/sentence
+trials (dataset_ctc_realtext.scan_text_trials) into ONE combined training
+set — see _letters_as_text_samples below. Sentence content has its
+spaces stripped before being pooled in (see WriteASWordDataset's own
+docstring on why: WriteAS's own alphabet, per the paper's own Section
+3.1, is 26 lowercase letters only, with no space class — matching this
+project's own established --no-space convention rather than inventing a
+27th class WriteAS's own architecture was never sized for).
 
 Loss: L_word = (1-lambda)*L_attention + lambda*L_CTC (paper's own Eq. 11,
 lambda=0.8 default — the paper's own tuned value, Section 4.3.3).
 L_attention is standard per-step cross-entropy against the teacher-forced
-target sequence (letters + <EOS>, see _encode_target below);
-L_CTC is nn.CTCLoss against the same letters (no <EOS>/<BOS> — CTC has
-its own blank symbol instead).
-
-Reuses this project's own word/sentence trial scanning
-(dataset_ctc_realtext.scan_text_trials/get_word_span) and IMU loading
-(dataset_ctc.load_imu_variable) directly — this file only adds a thin
-Dataset wrapping those, plus the model/training loop itself.
+target sequence (letters + <EOS>, see collate_writeas below); L_CTC is
+nn.CTCLoss against the same letters (no <EOS>/<BOS> — CTC has its own
+blank symbol instead).
 
 Usage:
     python train_writeas.py \\
         --participants-root ../dataset --classes a b c d e f g h i j k l m n o p q r s t u v w x y z \\
-        --imu-source watch --word-subfolder word --epochs 100 \\
+        --imu-source watch --word-subfolder word --sentence-subfolder sentence \\
+        --epochs 100 --augment --word-concat-per-epoch 500 \\
         --out-dir checkpoints/writeas_baseline
 """
 
@@ -39,18 +51,35 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import config_ctc
+from dataset import scan_dataset   # the ORIGINAL, unmodified letter-trial scanner — same
+                                     # function train_ctc.py itself uses, reused here as-is
+                                     # (see this file's own top-level docstring on why letters
+                                     # are included now)
 from dataset_ctc import load_imu_variable, discover_participant_dataset_dirs
 from dataset_ctc_realtext import scan_text_trials, get_word_span
 from model_writeas import WriteASModel
 from writeas_augment import apply_random_augmentation
 
 
+def _letters_as_text_samples(pdir: Path, classes: list, imu_source: str) -> list:
+    """Converts scan_dataset's own [(trial_dir, int_label), ...] letter
+    format into [(trial_dir, "x"), ...] — a length-1 STRING — so letter
+    trials can be pooled directly into the same list format
+    scan_text_trials returns for word/sentence trials (see main()),
+    without WriteASWordDataset needing to know or care whether a given
+    sample originally came from a letter, word, or sentence trial."""
+    letter_samples = scan_dataset(pdir, classes, imu_source=imu_source)
+    return [(trial_dir, classes[label]) for trial_dir, label in letter_samples]
+
+
 class WriteASWordDataset(Dataset):
-    """(imu, letter_indices) for each word/sentence trial — letter_indices
-    excludes spaces (WriteAS's own alphabet is 26 lowercase letters only,
-    Section 3.1: "All the 26 English characters... All the words are
-    written in lowercase" — no space class in the paper's own task, since
-    it's word-level, not sentence-level)."""
+    """(imu, letter_indices) for each letter/word/sentence trial —
+    letter_indices excludes spaces (WriteAS's own alphabet is 26
+    lowercase letters only, Section 3.1: "All the 26 English
+    characters... All the words are written in lowercase" — no space
+    class in the paper's own task). A sentence's content simply has its
+    spaces dropped before being turned into letter_indices — see this
+    file's own top-level docstring."""
 
     def __init__(self, samples: list, classes: list, imu_source: str,
                  finger: str = config_ctc.DEFAULT_FINGER, augment: bool = False,
@@ -75,7 +104,14 @@ class WriteASWordDataset(Dataset):
 
     def __getitem__(self, idx):
         trial_dir, text = self.samples[idx]
-        t_start, t_end = get_word_span(trial_dir)
+        # get_word_span can legitimately return None — e.g. a letter
+        # trial whose events.csv has no complete touch_on/off pair
+        # (letters weren't originally scanned/trimmed this way before
+        # letters were pooled in here — see this file's own top-level
+        # docstring) — falls back to the WHOLE trial (no crop) rather
+        # than crashing.
+        span = get_word_span(trial_dir)
+        t_start, t_end = span if span is not None else (None, None)
         imu = load_imu_variable(trial_dir, self.imu_source, self.finger, t_start, t_end)
         if self.augment:
             imu = apply_random_augmentation(imu, self.sample_rate)
@@ -137,7 +173,9 @@ class WriteASConcatDataset(Dataset):
 
         imus, texts = [], []
         for trial_dir, text in (trial_a, trial_b):
-            t_start, t_end = get_word_span(trial_dir)
+            span = get_word_span(trial_dir)   # can be None — see WriteASWordDataset.__getitem__'s
+                                                 # own comment on why (letters, mainly)
+            t_start, t_end = span if span is not None else (None, None)
             imus.append(load_imu_variable(trial_dir, self.imu_source, self.finger, t_start, t_end))
             texts.append(text)
 
@@ -235,10 +273,17 @@ def build_arg_parser():
     parser.add_argument('--finger', default=config_ctc.DEFAULT_FINGER)
     parser.add_argument('--word-subfolder', default='word')
     parser.add_argument('--sentence-subfolder', default=None,
-                         help='optional — WriteAS is a WORD-level system (Section 3.1: no space '
-                              'class), so sentence trials are only included if you explicitly ask, '
+                         help='optional — sentence trials are only included if you explicitly ask, '
                               'and their spaces are simply dropped from the target the same way '
-                              'this project\'s own --no-space mode does.')
+                              'this project\'s own --no-space mode does (WriteAS\'s own alphabet is '
+                              '26 lowercase letters only, Section 3.1 — no space class).')
+    parser.add_argument('--use-letter-trials', action='store_true',
+                         help='also pool in single-letter trials (dataset/<participant>/dataset/'
+                              '<class>/trial_XXX/, scanned via the ORIGINAL dataset.scan_dataset — '
+                              'the same function train_ctc.py itself uses) as length-1 "text" '
+                              'samples, alongside word/sentence trials. Recommended whenever word-'
+                              'only data is too small on its own — see this file\'s own top-level '
+                              'docstring.')
     parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--batch-size', type=int, default=8)
     parser.add_argument('--lr', type=float, default=1e-3)
@@ -283,9 +328,15 @@ def main():
                                     # since paper Section 4.1 restricts concatenation to
                                     # SAME-participant pairs
     for name, pdir in participant_dirs:
+        samples_by_participant[name] = []
+        if args.use_letter_trials:
+            s0 = _letters_as_text_samples(pdir, args.classes, args.imu_source)
+            samples.extend(s0)
+            samples_by_participant[name].extend(s0)
+            print(f'[SETUP]   {name}: {len(s0)} letter trials')
         s = scan_text_trials(pdir, args.word_subfolder, imu_source=args.imu_source)
         samples.extend(s)
-        samples_by_participant[name] = list(s)
+        samples_by_participant[name].extend(s)
         print(f'[SETUP]   {name}: {len(s)} word trials')
         if args.sentence_subfolder:
             s2 = scan_text_trials(pdir, args.sentence_subfolder, imu_source=args.imu_source)
@@ -293,7 +344,7 @@ def main():
             samples_by_participant[name].extend(s2)
             print(f'[SETUP]   {name}: {len(s2)} sentence trials')
     if not samples:
-        raise RuntimeError('no usable word/sentence trials found')
+        raise RuntimeError('no usable letter/word/sentence trials found')
 
     random.Random(args.seed).shuffle(samples)
     n_test = max(1, int(len(samples) * args.test_frac))
