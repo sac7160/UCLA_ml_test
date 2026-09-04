@@ -1,0 +1,5 @@
+python 260904test_realdistillation/train_ctc_distill.py --participants-root ../dataset --classes a b c d e f g h i j k l m n o p q r s t u v w x y z --no-space --modality fusion --audio-source watch --imu-source watch --epochs 100 --synthetic-per-epoch 3000 --concat-letters-min 2 --concat-letters-max 12 --distill-weight 0.5 --distill-temperature 4.0 --teacher-out-dir checkpoints/teacher_surface --out-dir checkpoints/real_kd
+
+python 260904test_realdistillation/evaluate_word_ctc.py --checkpoint checkpoints/real_kd/best_model.pt --participants-root ../dataset --splits-json checkpoints/real_kd/splits.json --include-sentences --include-letters \
+    
+    --phrase-set-path ../phrases2.txt
