@@ -395,6 +395,18 @@ def main():
     parser.add_argument('--test-frac', type=float, default=0.15)
     parser.add_argument('--epochs', type=int, default=30)
     parser.add_argument('--batch-size', type=int, default=8)
+    parser.add_argument('--num-workers', type=int, default=0,
+                         help='DataLoader worker processes for data loading (CSV reads, resampling, '
+                              'denoise/normalization) — 0 (default) does all of it on the main process, '
+                              'serially, which can leave the GPU idle waiting for each batch. Try 2-4 if '
+                              'training seems to stall/hang with GPU usage at 0%% (check via Task '
+                              'Manager/nvidia-smi) rather than genuinely crashing — this is a different '
+                              'symptom from TDR/power crashes and usually means data loading, not GPU '
+                              'compute, is the bottleneck (e.g. slow disk I/O — a dataset folder synced '
+                              'via OneDrive with files not fully downloaded locally is a common cause of '
+                              'exactly this on Windows). On Windows, num_workers>0 requires this script\'s '
+                              'own `if __name__ == "__main__":` guard (already present below) — see '
+                              'PyTorch\'s own documentation on this platform quirk.')
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--dropout', type=float, default=0.3,
                          help='applied inside the GRU stack and once more before the classifier head — '
@@ -828,10 +840,12 @@ def main():
             weights += text_weights
         combined = torch.utils.data.ConcatDataset(datasets) if len(datasets) > 1 else datasets[0]
         sampler = torch.utils.data.WeightedRandomSampler(weights, num_samples=len(weights), replacement=True)
-        loader = DataLoader(combined, batch_size=args.batch_size, sampler=sampler, collate_fn=collate_fn_ctc)
+        loader = DataLoader(combined, batch_size=args.batch_size, sampler=sampler, collate_fn=collate_fn_ctc,
+                             num_workers=args.num_workers, persistent_workers=(args.num_workers > 0))
         return loader, use_concat, use_text
 
-    val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, collate_fn=collate_fn_ctc)
+    val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, collate_fn=collate_fn_ctc,
+                             num_workers=args.num_workers, persistent_workers=(args.num_workers > 0))
 
     model = build_model_ctc(args.modality, n_classes=len(args.classes), dropout=args.dropout,
                              rnn_hidden=args.rnn_hidden, use_space=args.use_space,
@@ -990,6 +1004,20 @@ def main():
                     running_distill_loss += distill_loss.item()
                     n_distill_batches += 1
             loss.backward()
+            # Gradient clipping — was entirely absent before, on every
+            # --sequence-encoder option. Added specifically because LSTM
+            # (4 gates, more parameters than GRU) and CNN (dilation up to
+            # 4, wider receptive field than GRU/Transformer's own
+            # mechanisms) are both more prone to occasional exploding
+            # gradients than GRU/Transformer, and on some GPU/driver
+            # combinations a NaN/Inf gradient can trigger an actual crash
+            # rather than just a bad training step (see the chat this was
+            # added in — GRU/Transformer trained fine, LSTM/CNN crashed).
+            # max_norm=5.0 is a common, conservative default — clips the
+            # gradient's overall L2 norm down to at most 5.0 before the
+            # optimizer step, without changing its DIRECTION, only its
+            # magnitude when it's abnormally large.
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=5.0)
             optimizer.step()
 
             running_loss += loss.item()
